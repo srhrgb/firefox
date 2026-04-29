@@ -1,0 +1,3 @@
+## 2024-04-29 - Firefox Reality UI Button Accessibility
+**Learning:** Found several icon-only buttons in `browser/fxr/content/fxrui.html` and `browser/fxr/content/prefs.html` completely lacking `aria-label` or `title` attributes (e.g., Back, Forward, Home, Preferences, Close). Sighted users had to guess their function without tooltips, and screen readers received zero context.
+**Action:** When working on standalone or nested UI pages within this app (like `fxrui.html`), always proactively verify that all `button.icon_container` and similar utility-styled buttons have explicit `aria-label` and `title` attributes for parity between visual and screen reader experiences.
