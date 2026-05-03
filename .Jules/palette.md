@@ -1,0 +1,3 @@
+## 2024-05-15 - Missing ARIA Labels on Icon-only DevTools Toolbar Buttons
+**Learning:** Icon-only buttons within DevTools UI toolbars (`devtools/client/*/components/Toolbar.js`) are a recurring pattern where `aria-label` attributes are frequently omitted. While they often have `title` attributes (which are localized using `L10N.getStr()`), screen reader users may not have these announced depending on their configurations.
+**Action:** Always verify the presence of `aria-label` on any icon-only `dom.button` elements in the codebase. As an established convention, `aria-label` should match the localized string assigned to the `title` attribute for these specific UI components.
