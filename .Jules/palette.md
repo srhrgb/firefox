@@ -1,0 +1,1 @@
+## 2024-05-18 - [Add aria-label to SearchBox clear button]\n**Learning:** DevTools SearchBox clear button lacked an `aria-label` which is critical for screen reader users as it only contains an icon.\n**Action:** Applied the pattern from memory where `title` and `aria-label` should share the same localized string (`searchBox.clearButtonTitle`) to ensure it is accessible.
