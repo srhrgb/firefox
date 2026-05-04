@@ -97,6 +97,9 @@ class EditorToolbar extends Component {
         title: l10n.getStr(
           "webconsole.editor.toolbar.prettyPrintButton.tooltip"
         ),
+        "aria-label": l10n.getStr(
+          "webconsole.editor.toolbar.prettyPrintButton.tooltip"
+        ),
         onClick: () => dispatch(actions.prettyPrintEditor()),
       }),
       dom.div({
@@ -109,6 +112,9 @@ class EditorToolbar extends Component {
         title: l10n.getStr(
           "webconsole.editor.toolbar.history.prevExpressionButton.tooltip"
         ),
+        "aria-label": l10n.getStr(
+          "webconsole.editor.toolbar.history.prevExpressionButton.tooltip"
+        ),
         onClick: () => {
           webConsoleUI.jsterm.historyPeruse(HISTORY_BACK);
         },
@@ -119,15 +125,15 @@ class EditorToolbar extends Component {
         title: l10n.getStr(
           "webconsole.editor.toolbar.history.nextExpressionButton.tooltip"
         ),
+        "aria-label": l10n.getStr(
+          "webconsole.editor.toolbar.history.nextExpressionButton.tooltip"
+        ),
         onClick: () => {
           webConsoleUI.jsterm.historyPeruse(HISTORY_FORWARD);
         },
       }),
-      dom.button({
-        className: `devtools-button webconsole-editor-toolbar-reverseSearchButton ${
-          reverseSearchInputVisible ? "checked" : ""
-        }`,
-        title: reverseSearchInputVisible
+      (() => {
+        const title = reverseSearchInputVisible
           ? l10n.getFormatStr(
               "webconsole.editor.toolbar.reverseSearchButton.closeReverseSearch.tooltip",
               ["Esc" + (isMacOS ? " | Ctrl + C" : "")]
@@ -135,21 +141,32 @@ class EditorToolbar extends Component {
           : l10n.getFormatStr(
               "webconsole.editor.toolbar.reverseSearchButton.openReverseSearch.tooltip",
               [isMacOS ? "Ctrl + R" : "F9"]
-            ),
-        onClick: this.onReverseSearchButtonClick,
-      }),
+            );
+        return dom.button({
+          className: `devtools-button webconsole-editor-toolbar-reverseSearchButton ${
+            reverseSearchInputVisible ? "checked" : ""
+          }`,
+          title,
+          "aria-label": title,
+          onClick: this.onReverseSearchButtonClick,
+        });
+      })(),
       dom.div({
         className:
           "devtools-separator webconsole-editor-toolbar-historyNavSeparator",
       }),
-      dom.button({
-        className: "devtools-button webconsole-editor-toolbar-closeButton",
-        title: l10n.getFormatStr(
+      (() => {
+        const title = l10n.getFormatStr(
           "webconsole.editor.toolbar.closeButton.tooltip2",
           [isMacOS ? "Cmd + B" : "Ctrl + B"]
-        ),
-        onClick: () => dispatch(actions.editorToggle()),
-      })
+        );
+        return dom.button({
+          className: "devtools-button webconsole-editor-toolbar-closeButton",
+          title,
+          "aria-label": title,
+          onClick: () => dispatch(actions.editorToggle()),
+        });
+      })()
     );
   }
 }
