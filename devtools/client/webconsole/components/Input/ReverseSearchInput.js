@@ -196,30 +196,38 @@ class ReverseSearchInput extends Component {
     }
 
     return [
-      dom.button({
-        key: "search-result-button-prev",
-        className: "devtools-button search-result-button-prev",
-        title: l10n.getFormatStr(
+      (() => {
+        const title = l10n.getFormatStr(
           "webconsole.reverseSearch.result.previousButton.tooltip",
           [isMacOS ? "Ctrl + R" : "F9"]
-        ),
-        onClick: () => {
-          dispatch(actions.showReverseSearchBack({ access: "click" }));
-          this.inputNode.focus();
-        },
-      }),
-      dom.button({
-        key: "search-result-button-next",
-        className: "devtools-button search-result-button-next",
-        title: l10n.getFormatStr(
+        );
+        return dom.button({
+          key: "search-result-button-prev",
+          className: "devtools-button search-result-button-prev",
+          title,
+          "aria-label": title,
+          onClick: () => {
+            dispatch(actions.showReverseSearchBack({ access: "click" }));
+            this.inputNode.focus();
+          },
+        });
+      })(),
+      (() => {
+        const title = l10n.getFormatStr(
           "webconsole.reverseSearch.result.nextButton.tooltip",
           [isMacOS ? "Ctrl + S" : "Shift + F9"]
-        ),
-        onClick: () => {
-          dispatch(actions.showReverseSearchNext({ access: "click" }));
-          this.inputNode.focus();
-        },
-      }),
+        );
+        return dom.button({
+          key: "search-result-button-next",
+          className: "devtools-button search-result-button-next",
+          title,
+          "aria-label": title,
+          onClick: () => {
+            dispatch(actions.showReverseSearchNext({ access: "click" }));
+            this.inputNode.focus();
+          },
+        });
+      })(),
     ];
   }
 
@@ -255,16 +263,20 @@ class ReverseSearchInput extends Component {
         },
         this.renderSearchInformation(),
         this.renderNavigationButtons(),
-        dom.button({
-          className: "devtools-button reverse-search-close-button",
-          title: l10n.getFormatStr(
+        (() => {
+          const title = l10n.getFormatStr(
             "webconsole.reverseSearch.closeButton.tooltip",
             ["Esc" + (isMacOS ? " | Ctrl + C" : "")]
-          ),
-          onClick: () => {
-            dispatch(actions.reverseSearchInputToggle());
-          },
-        })
+          );
+          return dom.button({
+            className: "devtools-button reverse-search-close-button",
+            title,
+            "aria-label": title,
+            onClick: () => {
+              dispatch(actions.reverseSearchInputToggle());
+            },
+          });
+        })()
       )
     );
   }
