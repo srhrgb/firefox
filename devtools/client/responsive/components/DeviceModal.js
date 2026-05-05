@@ -273,6 +273,8 @@ class DeviceModal extends PureComponent {
                 dom.button({
                   id: "device-close-button",
                   className: "devtools-button",
+                  "aria-label": getStr("responsive.deviceSettingsCloseButton"),
+                  title: getStr("responsive.deviceSettingsCloseButton"),
                   onClick: () => onUpdateDeviceModal(false),
                 })
               )
