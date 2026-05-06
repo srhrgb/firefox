@@ -46,6 +46,8 @@ class NoAnimationPanel extends Component {
           event.stopPropagation();
           toggleElementPicker();
         },
+        title: L10N.getStr("panel.elementPickerTooltip"),
+        "aria-label": L10N.getStr("panel.elementPickerTooltip"),
       })
     );
   }
