@@ -1,0 +1,3 @@
+## 2024-05-15 - Missing ARIA Labels on Icon-only Buttons in DevTools Animation Panel
+**Learning:** Found a pattern of missing `aria-label` attributes on icon-only buttons created with React DOM factories (`dom.button()`) in the DevTools Animation Inspector (e.g., Pause/Resume, Rewind, Close, and Element Picker buttons). This significantly impairs screen reader accessibility. Additionally, some buttons were missing `title` attributes entirely.
+**Action:** When creating or updating icon-only buttons using `dom.button()` in the DevTools UI, always verify that both `title` and `"aria-label"` attributes are populated with the same localized string (using `getStr()` from l10n utilities) to provide both visual tooltips and screen reader accessibility.
