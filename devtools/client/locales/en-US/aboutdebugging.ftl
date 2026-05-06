@@ -262,6 +262,11 @@ about-debugging-connection-prompt-disable-button = Disable connection prompt
 
 # Title of a modal dialog displayed on remote runtime pages after clicking on the Profile Runtime button.
 about-debugging-profiler-dialog-title2 = Profiler
+# Title and aria-label used for the close button of the profiler dialog.
+about-debugging-profiler-dialog-close-button =
+  .title = Close profiler dialog
+  .aria-label = Close profiler dialog
+
 
 # Clicking on the header of a debug target category will expand or collapse the debug
 # target items in the category. This text is used as ’title’ attribute of the header,
