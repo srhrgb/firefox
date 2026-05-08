@@ -1510,6 +1510,10 @@ class JSTerm extends Component {
       className:
         "devtools-button webconsole-input-openEditorButton" +
         (this.props.showEditorOnboarding ? " devtools-feature-callout" : ""),
+      "aria-label": l10n.getFormatStr(
+        "webconsole.input.openEditorButton.tooltip2",
+        [isMacOS ? "Cmd + B" : "Ctrl + B"]
+      ),
       title: l10n.getFormatStr("webconsole.input.openEditorButton.tooltip2", [
         isMacOS ? "Cmd + B" : "Ctrl + B",
       ]),
