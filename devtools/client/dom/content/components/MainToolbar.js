@@ -66,6 +66,7 @@ class MainToolbar extends Component {
         className: "refresh devtools-button",
         id: "dom-refresh-button",
         title: l10n.getStr("dom.refresh"),
+        "aria-label": l10n.getStr("dom.refresh"),
         onClick: this.onRefresh,
       })
     );
