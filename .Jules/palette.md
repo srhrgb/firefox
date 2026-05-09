@@ -1,0 +1,3 @@
+## 2024-05-17 - Missing ARIA Labels in Responsive Design Mode Toolbar
+**Learning:** Found an accessibility issue pattern in the DevTools UI where `title` attributes were used for tooltips but `aria-label` was missing on icon-only buttons, making them potentially inaccessible to screen readers that prioritize the `aria-label` attribute over `title`. This is specific to how older components were authored.
+**Action:** Always ensure that both `title` and `aria-label` are present and match (typically using the same localized string) when creating or modifying icon-only buttons in the DevTools React codebase to maintain a uniform accessibility standard.
