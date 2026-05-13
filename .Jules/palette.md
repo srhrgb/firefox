@@ -1,0 +1,3 @@
+## 2024-05-13 - DevTools RDM Toolbar Accessibility Pattern
+**Learning:** Icon-only buttons using React DOM factories (`dom.button()`) in DevTools UI often rely solely on the `title` attribute for tooltips, but miss `aria-label` which is critical for screen reader users when icons are strictly decorative/symbolic. The established pattern is to reuse the localized string from `title` for `aria-label`.
+**Action:** When auditing or implementing icon-only buttons built with `dom.button()`, consistently check for and duplicate the localized `title` string into the `"aria-label"` property to ensure full accessibility coverage without needing new translations.
