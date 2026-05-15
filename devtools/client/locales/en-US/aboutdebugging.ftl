@@ -418,3 +418,8 @@ about-debugging-message-details-label-warning = Warning details
 
 # Label text used for default state of details of message component.
 about-debugging-message-details-label = Details
+
+# LOCALIZATION NOTE (about-debugging-profiler-dialog-close-button): Title and aria-label for the close button in the Profiler dialog.
+about-debugging-profiler-dialog-close-button =
+  .title = Close dialog
+  .aria-label = Close dialog
