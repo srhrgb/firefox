@@ -206,6 +206,17 @@ class FilterBar extends Component {
 
   renderClearButton() {
     return dom.button({
+      "aria-label": l10n.getFormatStr(
+        "webconsole.clearButton.tooltipWithHotkeyHint",
+        [
+          this.props.webConsoleUI
+            .getClearKeyShortcuts()
+            .map(electronKey =>
+              KeyShortcuts.stringifyFromElectronKey(electronKey)
+            )
+            .join(", "),
+        ]
+      ),
       className: "devtools-button devtools-clear-icon",
       title: l10n.getFormatStr("webconsole.clearButton.tooltipWithHotkeyHint", [
         this.props.webConsoleUI
@@ -365,6 +376,7 @@ class FilterBar extends Component {
         key: "wrapper",
       },
       dom.button({
+        "aria-label": l10n.getStr("webconsole.closeSplitConsoleButton.tooltip"),
         id: "split-console-close-button",
         key: "split-console-close-button",
         className: "devtools-button",
