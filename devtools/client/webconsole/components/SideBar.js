@@ -94,11 +94,15 @@ class SideBar extends Component {
           {
             className: "devtools-toolbar webconsole-sidebar-toolbar",
           },
-          dom.button({
-            className: "devtools-button sidebar-close-button",
-            title: l10n.getStr("webconsole.closeSidebarButton.tooltip"),
-            onClick: this.onClickSidebarClose,
-          })
+          (() => {
+            const title = l10n.getStr("webconsole.closeSidebarButton.tooltip");
+            return dom.button({
+              className: "devtools-button sidebar-close-button",
+              title,
+              "aria-label": title,
+              onClick: this.onClickSidebarClose,
+            });
+          })()
         ),
         dom.aside(
           {
