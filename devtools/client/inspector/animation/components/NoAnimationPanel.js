@@ -17,6 +17,9 @@ const { LocalizationHelper } = require("resource://devtools/shared/l10n.js");
 const L10N = new LocalizationHelper(
   "devtools/client/locales/animationinspector.properties"
 );
+const TOOLBOX_L10N = new LocalizationHelper(
+  "devtools/client/locales/toolbox.properties"
+);
 
 class NoAnimationPanel extends Component {
   static get propTypes() {
@@ -32,6 +35,7 @@ class NoAnimationPanel extends Component {
 
   render() {
     const { elementPickerEnabled, toggleElementPicker } = this.props;
+    const pickerLabel = TOOLBOX_L10N.getStr("toolbox.elementPicker.tooltip");
 
     return dom.div(
       {
@@ -46,6 +50,8 @@ class NoAnimationPanel extends Component {
           event.stopPropagation();
           toggleElementPicker();
         },
+        title: pickerLabel,
+        "aria-label": pickerLabel,
       })
     );
   }
