@@ -11,6 +11,10 @@ const {
 const dom = require("resource://devtools/client/shared/vendor/react-dom-factories.js");
 const PropTypes = require("resource://devtools/client/shared/vendor/react-prop-types.mjs");
 
+const {
+  getStr,
+} = require("resource://devtools/client/responsive/utils/l10n.js");
+
 const Types = require("resource://devtools/client/responsive/types.js");
 
 const Device = createFactory(
@@ -39,10 +43,15 @@ class DeviceList extends PureComponent {
       onRemoveCustomDevice,
     } = this.props;
 
+    const removeStr = getStr("responsive.removeDevice");
+    const editStr = getStr("responsive.editDevice");
+
     // Show a remove button for custom devices.
     const removeDeviceButton = dom.button({
       id: "device-edit-remove",
       className: "device-remove-button devtools-button",
+      title: removeStr,
+      "aria-label": removeStr,
       onClick: () => {
         onRemoveCustomDevice(device);
         this.props.onDeviceFormHide();
@@ -53,6 +62,8 @@ class DeviceList extends PureComponent {
     const editButton = dom.button({
       id: "device-edit-button",
       className: "devtools-button",
+      title: editStr,
+      "aria-label": editStr,
       onClick: () => {
         this.props.onDeviceFormShow("edit", device);
       },
