@@ -1506,13 +1506,17 @@ class JSTerm extends Component {
       return null;
     }
 
+    const openEditorTooltip = l10n.getFormatStr(
+      "webconsole.input.openEditorButton.tooltip2",
+      [isMacOS ? "Cmd + B" : "Ctrl + B"]
+    );
+
     return dom.button({
       className:
         "devtools-button webconsole-input-openEditorButton" +
         (this.props.showEditorOnboarding ? " devtools-feature-callout" : ""),
-      title: l10n.getFormatStr("webconsole.input.openEditorButton.tooltip2", [
-        isMacOS ? "Cmd + B" : "Ctrl + B",
-      ]),
+      title: openEditorTooltip,
+      "aria-label": openEditorTooltip,
       onClick: this.props.editorToggle,
     });
   }
