@@ -324,6 +324,7 @@ class Toolbar extends Component {
       className:
         "devtools-button devtools-clear-icon requests-list-clear-button",
       title: TOOLBAR_CLEAR,
+      "aria-label": TOOLBAR_CLEAR,
       onClick: clearRequests,
     });
   }

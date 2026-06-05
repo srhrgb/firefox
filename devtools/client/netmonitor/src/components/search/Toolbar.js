@@ -87,10 +87,12 @@ class Toolbar extends Component {
    * Render a clear button to clear search results.
    */
   renderClearButton() {
+    const clearLabel = L10N.getStr("netmonitor.search.toolbar.clear");
     return button({
       className:
         "devtools-button devtools-clear-icon ws-frames-list-clear-button",
-      title: L10N.getStr("netmonitor.search.toolbar.clear"),
+      title: clearLabel,
+      "aria-label": clearLabel,
       onClick: () => {
         this.props.clearSearchResults();
       },
