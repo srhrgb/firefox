@@ -45,6 +45,7 @@ class SnapshotListItem extends Component {
     let statusText = getStatusText(snapshot.state);
     let wantThrobber = !!statusText;
     const title = getSnapshotTitle(snapshot);
+    const deleteTitle = L10N.getStr("snapshot.io.delete");
 
     const selectedForDiffing =
       diffing &&
@@ -119,7 +120,8 @@ class SnapshotListItem extends Component {
             onDelete(snapshot);
           },
           className: "delete",
-          title: L10N.getStr("snapshot.io.delete"),
+          title: deleteTitle,
+          "aria-label": deleteTitle,
         });
 
     return dom.li(
