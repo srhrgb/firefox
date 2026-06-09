@@ -63,6 +63,11 @@ class Toolbar extends Component {
       onViewChange,
     } = this.props;
 
+    const clearSnapshotsStr = L10N.getStr("clear-snapshots.tooltip");
+    const takeSnapshotStr = L10N.getStr("take-snapshot");
+    const diffSnapshotsStr = L10N.getStr("diff-snapshots.tooltip");
+    const importSnapshotStr = L10N.getStr("import-snapshot");
+
     let viewToolbarOptions;
     if (view.state == viewState.CENSUS || view.state === viewState.DIFFING) {
       viewToolbarOptions = dom.div(
@@ -258,14 +263,16 @@ class Toolbar extends Component {
           className: "clear-snapshots devtools-button",
           disabled: !snapshots.length,
           onClick: onClearSnapshotsClick,
-          title: L10N.getStr("clear-snapshots.tooltip"),
+          title: clearSnapshotsStr,
+          "aria-label": clearSnapshotsStr,
         }),
 
         dom.button({
           id: "take-snapshot",
           className: "take-snapshot devtools-button",
           onClick: onTakeSnapshotClick,
-          title: L10N.getStr("take-snapshot"),
+          title: takeSnapshotStr,
+          "aria-label": takeSnapshotStr,
         }),
 
         dom.button({
@@ -274,14 +281,16 @@ class Toolbar extends Component {
             "devtools-button devtools-monospace" + (diffing ? " checked" : ""),
           disabled: snapshots.length < 2,
           onClick: onToggleDiffing,
-          title: L10N.getStr("diff-snapshots.tooltip"),
+          title: diffSnapshotsStr,
+          "aria-label": diffSnapshotsStr,
         }),
 
         dom.button({
           id: "import-snapshot",
           className: "import-snapshot devtools-button",
           onClick: onImportClick,
-          title: L10N.getStr("import-snapshot"),
+          title: importSnapshotStr,
+          "aria-label": importSnapshotStr,
         })
       ),
 
