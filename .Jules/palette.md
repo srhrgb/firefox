@@ -1,0 +1,3 @@
+## 2025-03-01 - Add ARIA Label to DevTools Animation Inspector Close Button
+**Learning:** Found an icon-only close button (`animation-detail-close-button`) in the Firefox DevTools Animation Inspector without a localized `title` or `aria-label`, reducing accessibility for screen reader users and missing visual hover context for all users. Using React DOM factories (`dom.button`) in Firefox DevTools UI, standard hyphenated HTML attributes (e.g. `"aria-label"`) must be used over camelCase.
+**Action:** Always verify that icon-only buttons (`dom.button`) in DevTools UI define explicitly localized `title` and `aria-label` attributes using `getStr()` from the respective l10n `.properties` file to ensure keyboard and screen-reader accessibility.
