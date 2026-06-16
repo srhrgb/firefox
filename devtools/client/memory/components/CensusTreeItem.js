@@ -94,6 +94,10 @@ class CensusTreeItem extends Component {
       inverted,
     } = this.props;
 
+    const viewIndividualsTooltip = L10N.getStr(
+      "tree-item.view-individuals.tooltip"
+    );
+
     const bytes = formatNumber(item.bytes, !!diffing);
     const percentBytes = formatPercent(getPercentBytes(item.bytes), !!diffing);
 
@@ -126,7 +130,8 @@ class CensusTreeItem extends Component {
         individualsButton = dom.button(
           {
             key: `individuals-button-${item.id}`,
-            title: L10N.getStr("tree-item.view-individuals.tooltip"),
+            title: viewIndividualsTooltip,
+            "aria-label": viewIndividualsTooltip,
             className: "devtools-button individuals-button",
             onClick: e => {
               // Don't let the event bubble up to cause this item to focus after
