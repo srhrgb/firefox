@@ -1,0 +1,3 @@
+## 2026-06-17 - Adding ARIA labels to DevTools React buttons
+**Learning:** When creating or updating icon-only buttons in the DevTools UI (specifically React components utilizing the dom module), the established convention is to assign the same localized text to both the `title` and `aria-label` attributes to ensure screen reader accessibility. Note that React DOM factories like `dom.button()` correctly handle standard hyphenated HTML attributes like `"aria-label"`.
+**Action:** When adding or auditing icon-only buttons in the React-based DevTools components, ensure both `title` and `"aria-label"` are present and share the same localized string value.
