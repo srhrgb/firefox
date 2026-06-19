@@ -139,6 +139,13 @@ class Toolbar extends PureComponent {
       viewport,
     } = this.props;
 
+    const rotateStr = getStr("responsive.rotate");
+    const screenshotStr = getStr("responsive.screenshot");
+    const exitStr = getStr("responsive.exit");
+    const touchSimulationStr = touchSimulationEnabled
+      ? getStr("responsive.disableTouch")
+      : getStr("responsive.enableTouch");
+
     return dom.header(
       {
         id: "toolbar",
@@ -170,7 +177,8 @@ class Toolbar extends PureComponent {
             viewport.width > viewport.height ? "landscape" : "portrait"
           }`,
           onClick: () => onRotateViewport(viewport.id),
-          title: getStr("responsive.rotate"),
+          title: rotateStr,
+          "aria-label": rotateStr,
         }),
         dom.div({ className: "devtools-separator" }),
         DevicePixelRatioMenu({
@@ -195,9 +203,8 @@ class Toolbar extends PureComponent {
           id: "touch-simulation-button",
           className:
             "devtools-button" + (touchSimulationEnabled ? " checked" : ""),
-          title: touchSimulationEnabled
-            ? getStr("responsive.disableTouch")
-            : getStr("responsive.enableTouch"),
+          title: touchSimulationStr,
+          "aria-label": touchSimulationStr,
           onClick: () => onChangeTouchSimulation(!touchSimulationEnabled),
         })
       ),
@@ -206,7 +213,8 @@ class Toolbar extends PureComponent {
         dom.button({
           id: "screenshot-button",
           className: "devtools-button",
-          title: getStr("responsive.screenshot"),
+          title: screenshotStr,
+          "aria-label": screenshotStr,
           onClick: onScreenshot,
           disabled: screenshot.isCapturing,
         }),
@@ -220,7 +228,8 @@ class Toolbar extends PureComponent {
         dom.button({
           id: "exit-button",
           className: "devtools-button",
-          title: getStr("responsive.exit"),
+          title: exitStr,
+          "aria-label": exitStr,
           onClick: onExit,
         })
       )
