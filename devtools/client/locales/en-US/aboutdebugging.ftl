@@ -418,3 +418,8 @@ about-debugging-message-details-label-warning = Warning details
 
 # Label text used for default state of details of message component.
 about-debugging-message-details-label = Details
+
+# Alt text used for the close button of profiler dialog.
+about-debugging-profiler-dialog-close-button =
+  .title = Close Profiler
+  .aria-label = Close Profiler
