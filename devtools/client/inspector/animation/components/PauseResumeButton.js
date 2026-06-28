@@ -69,14 +69,16 @@ class PauseResumeButton extends PureComponent {
 
   render() {
     const isRunning = hasRunningAnimation(this.props.animations);
+    const tooltip = isRunning
+      ? getStr("timeline.resumedButtonTooltip")
+      : getStr("timeline.pausedButtonTooltip");
 
     return dom.button({
       className:
         "pause-resume-button devtools-button" + (isRunning ? "" : " paused"),
       onClick: this.onToggleAnimationsPlayState.bind(this),
-      title: isRunning
-        ? getStr("timeline.resumedButtonTooltip")
-        : getStr("timeline.pausedButtonTooltip"),
+      "aria-label": tooltip,
+      title: tooltip,
       ref: this.pauseResumeButtonRef,
     });
   }
