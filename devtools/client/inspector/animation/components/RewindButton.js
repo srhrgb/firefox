@@ -23,14 +23,16 @@ class RewindButton extends PureComponent {
 
   render() {
     const { rewindAnimationsCurrentTime } = this.props;
+    const tooltipStr = getStr("timeline.rewindButtonTooltip");
 
     return dom.button({
+      "aria-label": tooltipStr,
       className: "rewind-button devtools-button",
       onClick: event => {
         event.stopPropagation();
         rewindAnimationsCurrentTime();
       },
-      title: getStr("timeline.rewindButtonTooltip"),
+      title: tooltipStr,
     });
   }
 }
