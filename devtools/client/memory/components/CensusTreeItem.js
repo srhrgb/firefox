@@ -81,6 +81,10 @@ class CensusTreeItem extends Component {
   }
 
   render() {
+    const viewIndividualsLabel = L10N.getStr(
+      "tree-item.view-individuals.tooltip"
+    );
+
     const {
       item,
       depth,
@@ -126,7 +130,8 @@ class CensusTreeItem extends Component {
         individualsButton = dom.button(
           {
             key: `individuals-button-${item.id}`,
-            title: L10N.getStr("tree-item.view-individuals.tooltip"),
+            title: viewIndividualsLabel,
+            "aria-label": viewIndividualsLabel,
             className: "devtools-button individuals-button",
             onClick: e => {
               // Don't let the event bubble up to cause this item to focus after
