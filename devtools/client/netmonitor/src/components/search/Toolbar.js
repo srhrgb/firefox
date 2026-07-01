@@ -27,6 +27,12 @@ const SearchBox = createFactory(
   require("resource://devtools/client/shared/components/SearchBox.js")
 );
 
+// Localization
+const TOOLBAR_CLEAR = L10N.getStr("netmonitor.search.toolbar.clear");
+const TOOLBAR_CASE_SENSITIVE = L10N.getStr(
+  "netmonitor.search.toolbar.caseSensitive"
+);
+
 /**
  * Network Search toolbar component.
  *
@@ -90,7 +96,8 @@ class Toolbar extends Component {
     return button({
       className:
         "devtools-button devtools-clear-icon ws-frames-list-clear-button",
-      title: L10N.getStr("netmonitor.search.toolbar.clear"),
+      title: TOOLBAR_CLEAR,
+      "aria-label": TOOLBAR_CLEAR,
       onClick: () => {
         this.props.clearSearchResults();
       },
@@ -107,7 +114,8 @@ class Toolbar extends Component {
     return button({
       id: "devtools-network-search-caseSensitive",
       className: `devtools-button ${active}`,
-      title: L10N.getStr("netmonitor.search.toolbar.caseSensitive"),
+      title: TOOLBAR_CASE_SENSITIVE,
+      "aria-label": TOOLBAR_CASE_SENSITIVE,
       onClick: toggleCaseSensitiveSearch,
     });
   }
