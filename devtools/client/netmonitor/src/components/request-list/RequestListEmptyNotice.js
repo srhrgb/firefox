@@ -87,6 +87,7 @@ class RequestListEmptyNotice extends Component {
             span(null, PERFORMANCE_NOTICE_1),
             button({
               title: PERFORMANCE_NOTICE_3,
+              "aria-label": PERFORMANCE_NOTICE_3,
               className:
                 "devtools-button devtools-button-standalone requests-list-perf-notice-button",
               onClick: this.props.onPerfClick,
