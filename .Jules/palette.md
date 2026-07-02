@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility for Icon-only Buttons in DevTools Animation Panel
+**Learning:** Found several icon-only buttons in the DevTools Animation Inspector that lacked `aria-label`s, rendering them inaccessible to screen readers. Even elements with `title` attributes need `aria-label`s for full accessibility, and standard convention is to duplicate the string for both.
+**Action:** When adding or updating icon-only buttons in DevTools components, ensure they use `aria-label` with the identical localized string used for `title`. When adding new strings, define `aria-label` and `title` variables at the top of the `render` block to avoid redundant calls to `L10N.getStr()`.
