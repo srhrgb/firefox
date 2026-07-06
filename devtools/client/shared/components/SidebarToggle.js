@@ -81,6 +81,7 @@ class SidebarToggle extends Component {
     return button({
       className: classNames.join(" "),
       title,
+      "aria-label": title,
       onClick: this.onClick,
     });
   }
