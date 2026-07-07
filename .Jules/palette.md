@@ -1,0 +1,1 @@
+## 2026-07-07 - Add ARIA labels to icon-only buttons\n**Learning:** When adding new localized strings to .properties or .ftl files in the Gecko codebase, they must be preceded by a `# LOCALIZATION NOTE ([string_key]): [description]` to provide context for translators.\n**Action:** Always include the localization note when adding new strings to property files.
