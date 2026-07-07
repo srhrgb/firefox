@@ -195,14 +195,22 @@ class ReverseSearchInput extends Component {
       return null;
     }
 
+    const prevButtonTitle = l10n.getFormatStr(
+      "webconsole.reverseSearch.result.previousButton.tooltip",
+      [isMacOS ? "Ctrl + R" : "F9"]
+    );
+
+    const nextButtonTitle = l10n.getFormatStr(
+      "webconsole.reverseSearch.result.nextButton.tooltip",
+      [isMacOS ? "Ctrl + S" : "Shift + F9"]
+    );
+
     return [
       dom.button({
         key: "search-result-button-prev",
         className: "devtools-button search-result-button-prev",
-        title: l10n.getFormatStr(
-          "webconsole.reverseSearch.result.previousButton.tooltip",
-          [isMacOS ? "Ctrl + R" : "F9"]
-        ),
+        title: prevButtonTitle,
+        "aria-label": prevButtonTitle,
         onClick: () => {
           dispatch(actions.showReverseSearchBack({ access: "click" }));
           this.inputNode.focus();
@@ -211,10 +219,8 @@ class ReverseSearchInput extends Component {
       dom.button({
         key: "search-result-button-next",
         className: "devtools-button search-result-button-next",
-        title: l10n.getFormatStr(
-          "webconsole.reverseSearch.result.nextButton.tooltip",
-          [isMacOS ? "Ctrl + S" : "Shift + F9"]
-        ),
+        title: nextButtonTitle,
+        "aria-label": nextButtonTitle,
         onClick: () => {
           dispatch(actions.showReverseSearchNext({ access: "click" }));
           this.inputNode.focus();
@@ -235,6 +241,11 @@ class ReverseSearchInput extends Component {
     if (reverseSearchTotalResults === 0) {
       classNames.push("no-result");
     }
+
+    const closeButtonTitle = l10n.getFormatStr(
+      "webconsole.reverseSearch.closeButton.tooltip",
+      ["Esc" + (isMacOS ? " | Ctrl + C" : "")]
+    );
 
     return dom.div(
       { className: classNames.join(" ") },
@@ -257,10 +268,8 @@ class ReverseSearchInput extends Component {
         this.renderNavigationButtons(),
         dom.button({
           className: "devtools-button reverse-search-close-button",
-          title: l10n.getFormatStr(
-            "webconsole.reverseSearch.closeButton.tooltip",
-            ["Esc" + (isMacOS ? " | Ctrl + C" : "")]
-          ),
+          title: closeButtonTitle,
+          "aria-label": closeButtonTitle,
           onClick: () => {
             dispatch(actions.reverseSearchInputToggle());
           },
