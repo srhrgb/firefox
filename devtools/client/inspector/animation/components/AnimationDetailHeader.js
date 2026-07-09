@@ -11,6 +11,7 @@ const dom = require("resource://devtools/client/shared/vendor/react-dom-factorie
 const PropTypes = require("resource://devtools/client/shared/vendor/react-prop-types.mjs");
 
 const {
+  getStr,
   getFormattedTitle,
 } = require("resource://devtools/client/inspector/animation/utils/l10n.js");
 
@@ -31,6 +32,8 @@ class AnimationDetailHeader extends PureComponent {
   render() {
     const { animation } = this.props;
 
+    const closeTitle = getStr("animation.detail.closeButtonTooltip");
+
     return dom.div(
       {
         className: "animation-detail-header devtools-toolbar",
@@ -44,6 +47,8 @@ class AnimationDetailHeader extends PureComponent {
       dom.button({
         className: "animation-detail-close-button devtools-button",
         onClick: this.onClick.bind(this),
+        title: closeTitle,
+        "aria-label": closeTitle,
       })
     );
   }
