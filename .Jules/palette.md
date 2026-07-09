@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing ARIA Labels on Animation Inspector Buttons
+**Learning:** Found that multiple icon-only utility buttons in the DevTools Animation Inspector (`AnimationDetailHeader`, `PauseResumeButton`, `RewindButton`) lacked explicitly defined `aria-label`s, although some had `title`s. Screen readers require explicitly defined `aria-label` attributes to correctly read icon-only controls.
+**Action:** Always ensure that any icon-only button rendered via `dom.button()` has identical `title` (for mouse-hover discovery) and `aria-label` (for screen-reader accessibility) attributes assigned.
