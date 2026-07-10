@@ -87,10 +87,12 @@ class Toolbar extends Component {
    * Render a clear button to clear search results.
    */
   renderClearButton() {
+    const title = L10N.getStr("netmonitor.search.toolbar.clear");
     return button({
       className:
         "devtools-button devtools-clear-icon ws-frames-list-clear-button",
-      title: L10N.getStr("netmonitor.search.toolbar.clear"),
+      title,
+      "aria-label": title,
       onClick: () => {
         this.props.clearSearchResults();
       },
@@ -103,11 +105,13 @@ class Toolbar extends Component {
   renderCaseSensitiveButton() {
     const { caseSensitive, toggleCaseSensitiveSearch } = this.props;
     const active = caseSensitive ? "checked" : "";
+    const title = L10N.getStr("netmonitor.search.toolbar.caseSensitive");
 
     return button({
       id: "devtools-network-search-caseSensitive",
       className: `devtools-button ${active}`,
-      title: L10N.getStr("netmonitor.search.toolbar.caseSensitive"),
+      title,
+      "aria-label": title,
       onClick: toggleCaseSensitiveSearch,
     });
   }
