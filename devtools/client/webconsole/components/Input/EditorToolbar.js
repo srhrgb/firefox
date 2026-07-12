@@ -74,6 +74,33 @@ class EditorToolbar extends Component {
 
     const enterStr = l10n.getStr("webconsole.enterKey");
 
+    const executeTooltip = l10n.getFormatStr(
+      "webconsole.editor.toolbar.executeButton.tooltip",
+      [isMacOS ? `Cmd + ${enterStr}` : `Ctrl + ${enterStr}`]
+    );
+    const prettyPrintTooltip = l10n.getStr(
+      "webconsole.editor.toolbar.prettyPrintButton.tooltip"
+    );
+    const prevExprTooltip = l10n.getStr(
+      "webconsole.editor.toolbar.history.prevExpressionButton.tooltip"
+    );
+    const nextExprTooltip = l10n.getStr(
+      "webconsole.editor.toolbar.history.nextExpressionButton.tooltip"
+    );
+    const reverseSearchTooltip = reverseSearchInputVisible
+      ? l10n.getFormatStr(
+          "webconsole.editor.toolbar.reverseSearchButton.closeReverseSearch.tooltip",
+          ["Esc" + (isMacOS ? " | Ctrl + C" : "")]
+        )
+      : l10n.getFormatStr(
+          "webconsole.editor.toolbar.reverseSearchButton.openReverseSearch.tooltip",
+          [isMacOS ? "Ctrl + R" : "F9"]
+        );
+    const closeTooltip = l10n.getFormatStr(
+      "webconsole.editor.toolbar.closeButton.tooltip2",
+      [isMacOS ? "Cmd + B" : "Ctrl + B"]
+    );
+
     return dom.div(
       {
         className:
@@ -82,10 +109,8 @@ class EditorToolbar extends Component {
       dom.button(
         {
           className: "devtools-button webconsole-editor-toolbar-executeButton",
-          title: l10n.getFormatStr(
-            "webconsole.editor.toolbar.executeButton.tooltip",
-            [isMacOS ? `Cmd + ${enterStr}` : `Ctrl + ${enterStr}`]
-          ),
+          title: executeTooltip,
+          "aria-label": executeTooltip,
           onClick: () => dispatch(actions.evaluateExpression()),
         },
         l10n.getStr("webconsole.editor.toolbar.executeButton.label")
@@ -94,9 +119,8 @@ class EditorToolbar extends Component {
       dom.button({
         className:
           "devtools-button webconsole-editor-toolbar-prettyPrintButton",
-        title: l10n.getStr(
-          "webconsole.editor.toolbar.prettyPrintButton.tooltip"
-        ),
+        title: prettyPrintTooltip,
+        "aria-label": prettyPrintTooltip,
         onClick: () => dispatch(actions.prettyPrintEditor()),
       }),
       dom.div({
@@ -106,9 +130,8 @@ class EditorToolbar extends Component {
       dom.button({
         className:
           "devtools-button webconsole-editor-toolbar-history-prevExpressionButton",
-        title: l10n.getStr(
-          "webconsole.editor.toolbar.history.prevExpressionButton.tooltip"
-        ),
+        title: prevExprTooltip,
+        "aria-label": prevExprTooltip,
         onClick: () => {
           webConsoleUI.jsterm.historyPeruse(HISTORY_BACK);
         },
@@ -116,9 +139,8 @@ class EditorToolbar extends Component {
       dom.button({
         className:
           "devtools-button webconsole-editor-toolbar-history-nextExpressionButton",
-        title: l10n.getStr(
-          "webconsole.editor.toolbar.history.nextExpressionButton.tooltip"
-        ),
+        title: nextExprTooltip,
+        "aria-label": nextExprTooltip,
         onClick: () => {
           webConsoleUI.jsterm.historyPeruse(HISTORY_FORWARD);
         },
@@ -127,15 +149,8 @@ class EditorToolbar extends Component {
         className: `devtools-button webconsole-editor-toolbar-reverseSearchButton ${
           reverseSearchInputVisible ? "checked" : ""
         }`,
-        title: reverseSearchInputVisible
-          ? l10n.getFormatStr(
-              "webconsole.editor.toolbar.reverseSearchButton.closeReverseSearch.tooltip",
-              ["Esc" + (isMacOS ? " | Ctrl + C" : "")]
-            )
-          : l10n.getFormatStr(
-              "webconsole.editor.toolbar.reverseSearchButton.openReverseSearch.tooltip",
-              [isMacOS ? "Ctrl + R" : "F9"]
-            ),
+        title: reverseSearchTooltip,
+        "aria-label": reverseSearchTooltip,
         onClick: this.onReverseSearchButtonClick,
       }),
       dom.div({
@@ -144,10 +159,8 @@ class EditorToolbar extends Component {
       }),
       dom.button({
         className: "devtools-button webconsole-editor-toolbar-closeButton",
-        title: l10n.getFormatStr(
-          "webconsole.editor.toolbar.closeButton.tooltip2",
-          [isMacOS ? "Cmd + B" : "Ctrl + B"]
-        ),
+        title: closeTooltip,
+        "aria-label": closeTooltip,
         onClick: () => dispatch(actions.editorToggle()),
       })
     );
