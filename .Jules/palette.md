@@ -1,0 +1,3 @@
+## 2023-10-25 - Responsive Design Mode Missing ARIA Labels
+**Learning:** Icon-only buttons in the Responsive Design Mode toolbar (like "Rotate Viewport" and "Take Screenshot") are using `title` attributes for tooltips but lack proper `aria-label`s for screen reader accessibility. The standard convention in DevTools is to provide the same localized string to both `title` and `aria-label`.
+**Action:** Always verify that icon-only buttons created with `dom.button()` in DevTools components have an explicit `"aria-label"` that matches the `title` attribute, particularly when using `getStr()` for localization. Extracting the `getStr()` result into a variable helps maintain DRYness when assigning both properties.
