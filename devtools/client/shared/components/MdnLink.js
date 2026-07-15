@@ -18,7 +18,9 @@ loader.lazyRequireGetter(
 function MDNLink({ url, title }) {
   return a({
     className: "devtools-button learn-more-link",
+    href: url,
     title,
+    "aria-label": title,
     onClick: e => onLearnMoreClick(e, url),
   });
 }
