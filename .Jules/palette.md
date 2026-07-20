@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility standards in Firefox DevTools
+**Learning:** Icon-only buttons must have an explicit aria-label for accessibility. If title is provided, aria-label should also be provided, usually with the exact same localized string, to ensure that screen readers announce the button correctly without relying solely on title attribute interpretation (which varies across screen readers).
+**Action:** Always add aria-labels to icon-only buttons using localized strings, even if they have tooltips or seem obvious to sighted users. When tooltips (title attributes) are present, ensure they match the aria-label to keep functionality and accessibility synchronized.
