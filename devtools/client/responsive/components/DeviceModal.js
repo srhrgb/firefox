@@ -256,6 +256,7 @@ class DeviceModal extends PureComponent {
   render() {
     const { onUpdateDeviceModal } = this.props;
     const isDeviceFormShown = this.state.deviceFormType;
+    const closeTooltip = getStr("responsive.deviceCloseTooltip");
 
     return dom.div(
       {
@@ -273,6 +274,8 @@ class DeviceModal extends PureComponent {
                 dom.button({
                   id: "device-close-button",
                   className: "devtools-button",
+                  title: closeTooltip,
+                  "aria-label": closeTooltip,
                   onClick: () => onUpdateDeviceModal(false),
                 })
               )
