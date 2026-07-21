@@ -105,6 +105,8 @@ class SettingsMenu extends PureComponent {
     return dom.button({
       id: "settings-button",
       className: "devtools-button",
+      title: getStr("responsive.settings"),
+      "aria-label": getStr("responsive.settings"),
       onClick: this.onToggleSettingMenu,
     });
   }
