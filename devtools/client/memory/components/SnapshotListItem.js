@@ -38,6 +38,8 @@ class SnapshotListItem extends Component {
   }
 
   render() {
+    const deleteSnapshotTooltip = L10N.getStr("snapshot.io.delete");
+
     const { item: snapshot, onClick, onSave, onDelete, diffing } = this.props;
     let className = `snapshot-list-item ${
       snapshot.selected ? " selected" : ""
@@ -105,7 +107,12 @@ class SnapshotListItem extends Component {
       ? void 0
       : dom.a(
           {
-            onClick: () => onSave(snapshot),
+            href: "#",
+            onClick: e => {
+              e.preventDefault();
+              e.stopPropagation();
+              onSave(snapshot);
+            },
             className: "save",
           },
           L10N.getStr("snapshot.io.save")
@@ -119,7 +126,8 @@ class SnapshotListItem extends Component {
             onDelete(snapshot);
           },
           className: "delete",
-          title: L10N.getStr("snapshot.io.delete"),
+          title: deleteSnapshotTooltip,
+          "aria-label": deleteSnapshotTooltip,
         });
 
     return dom.li(
