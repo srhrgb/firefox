@@ -1,0 +1,3 @@
+## 2024-07-23 - Accessibility for Icon-only Close Buttons in Animation Inspector
+**Learning:** In DevTools, icon-only buttons like `.animation-detail-close-button` must have explicitly set `title` and `aria-label` attributes localized via `l10n.js` to ensure they are readable by screen readers and provide hover context. The established convention is to assign the same localized string (e.g. `detail.closeButton.tooltip`) to both attributes simultaneously when creating these React DOM nodes.
+**Action:** Always check `.devtools-button` elements in `.js` component files. If a button relies solely on CSS background images for its visual content, verify it has `aria-label` and `title` props in its `dom.button()` factory call.
