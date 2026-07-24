@@ -1,0 +1,3 @@
+## 2024-07-24 - Missing href on interactive anchor elements
+**Learning:** Found that anchor elements (`dom.a()`) used for interactive UI controls (like the collapsable header in `DebugTargetPane.js`) lack an `href` attribute. This makes them natively unfocusable by the keyboard, hindering accessibility.
+**Action:** When using `<a>` or `dom.a()` for interactive UI controls in DevTools, ensure they have an `href` attribute (e.g., `href: '#'`) to make them natively focusable by the keyboard, supporting accessibility standards. If using `href: '#'`, ensure the `onClick` handler calls `e.preventDefault()` to prevent unintended page scrolling.
