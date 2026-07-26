@@ -1,0 +1,3 @@
+## 2024-05-18 - Icon-Only Button Accessibility in DevTools
+**Learning:** In the Firefox DevTools UI, icon-only buttons (like `animation-detail-close-button` and `animation-element-picker`) frequently lack `aria-label` and `title` attributes. Adding both the `aria-label` (for screen readers) and `title` (for tooltips on hover) with the exact same localized string is an easy and critical a11y/micro-UX enhancement.
+**Action:** When inspecting DevTools components, routinely check `dom.button` declarations for missing accessible labels and tooltips, especially when the button relies entirely on CSS classes for its visual icon. Ensure strings are properly localized in the `.properties` or `.ftl` files.
