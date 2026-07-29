@@ -69,6 +69,8 @@ class Font extends PureComponent {
 
     const trailing = ruleText.substring(ruleText.lastIndexOf("}"));
 
+    const title = getStr("fontinspector.showFullText");
+
     let body;
     if (isFontFaceRuleExpanded) {
       const ruleBodyText = ruleText
@@ -110,7 +112,8 @@ class Font extends PureComponent {
         : dom.button({
             className: "font-truncated-string-expander",
             onClick: this.onFontFaceRuleToggle,
-            title: getStr("fontinspector.showFullText"),
+            title,
+            "aria-label": title,
           }),
       trailing
     );
@@ -119,11 +122,14 @@ class Font extends PureComponent {
   renderFontCSSCodeTwisty() {
     const { isFontFaceRuleExpanded } = this.state;
 
+    const title = getStr("fontinspector.showFullText");
+
     return dom.button({
       className: "theme-twisty",
       onClick: this.onFontFaceRuleToggle,
       "aria-expanded": isFontFaceRuleExpanded,
-      title: getStr("fontinspector.showFullText"),
+      title,
+      "aria-label": title,
     });
   }
 
