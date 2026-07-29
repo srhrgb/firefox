@@ -60,6 +60,7 @@ class FontMetadata extends PureComponent {
         {
           className: "theme-twisty",
           title,
+          "aria-label": title,
           "aria-expanded": expanded,
           onClick: toggleExpanded,
         },
@@ -70,6 +71,7 @@ class FontMetadata extends PureComponent {
         ? dom.button({
             onClick: toggleExpanded,
             title,
+            "aria-label": title,
             className: "font-truncated-string-expander",
           })
         : null,
