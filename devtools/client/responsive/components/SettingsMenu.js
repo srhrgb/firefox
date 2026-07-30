@@ -102,9 +102,12 @@ class SettingsMenu extends PureComponent {
   }
 
   render() {
+    const tooltip = getStr("responsive.settingsMenu.title");
     return dom.button({
       id: "settings-button",
       className: "devtools-button",
+      "aria-label": tooltip,
+      title: tooltip,
       onClick: this.onToggleSettingMenu,
     });
   }
