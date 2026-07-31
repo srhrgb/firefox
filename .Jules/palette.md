@@ -1,0 +1,3 @@
+## 2024-10-24 - Accessibility improvements to responsive design mode icon-only buttons
+**Learning:** In the responsive design tool in Firefox DevTools, several icon-only buttons (like Settings, Close Modal, Edit/Remove custom device) lacked both `title` and `aria-label` attributes. This made them inaccessible to screen readers and difficult for users to understand without hover context. The established convention in this project is to assign the same localized text to both the `title` and `aria-label` attributes.
+**Action:** Always verify that icon-only buttons created with React `dom.button` have both `title` and `aria-label` populated from localized strings to ensure a baseline level of accessibility.
