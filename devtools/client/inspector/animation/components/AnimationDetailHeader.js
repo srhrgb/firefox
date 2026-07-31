@@ -14,6 +14,10 @@ const {
   getFormattedTitle,
 } = require("resource://devtools/client/inspector/animation/utils/l10n.js");
 
+const {
+  getStr: getSharedStr,
+} = require("resource://devtools/client/shared/utils/l10n.js");
+
 class AnimationDetailHeader extends PureComponent {
   static get propTypes() {
     return {
@@ -42,8 +46,10 @@ class AnimationDetailHeader extends PureComponent {
         getFormattedTitle(animation.state)
       ),
       dom.button({
+        "aria-label": getSharedStr("toolbox.closebutton.tooltip"),
         className: "animation-detail-close-button devtools-button",
         onClick: this.onClick.bind(this),
+        title: getSharedStr("toolbox.closebutton.tooltip"),
       })
     );
   }
