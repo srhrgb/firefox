@@ -91,6 +91,7 @@ class ConfirmDialog extends Component {
   }
 
   onLearnMoreClick(e) {
+    e.preventDefault();
     this.props.serviceContainer.openLink(LEARN_MORE_URL, e);
   }
 
@@ -134,6 +135,7 @@ class ConfirmDialog extends Component {
       {
         className: "learn-more-link",
         key: "learn-more-link",
+        href: LEARN_MORE_URL,
         title: LEARN_MORE_URL.split("?")[0],
         onClick: this.onLearnMoreClick,
       },
