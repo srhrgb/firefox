@@ -54,24 +54,32 @@ class Message extends PureComponent {
   }
 
   renderButton(level) {
-    return dom.button(
+    return Localized(
       {
-        className:
-          `ghost-button message__button message__button--${level} ` +
-          `qa-message-button-close-button`,
-        onClick: () => this.closeMessage(),
-      },
-      Localized(
-        {
-          id: "about-debugging-message-close-icon",
-          attrs: {
-            alt: true,
-          },
+        id: "about-debugging-message-close-icon",
+        attrs: {
+          title: true,
         },
-        dom.img({
-          className: "qa-message-button-close-icon",
-          src: CLOSE_ICON_SRC,
-        })
+      },
+      dom.button(
+        {
+          className:
+            `ghost-button message__button message__button--${level} ` +
+            `qa-message-button-close-button`,
+          onClick: () => this.closeMessage(),
+        },
+        Localized(
+          {
+            id: "about-debugging-message-close-icon",
+            attrs: {
+              alt: true,
+            },
+          },
+          dom.img({
+            className: "qa-message-button-close-icon",
+            src: CLOSE_ICON_SRC,
+          })
+        )
       )
     );
   }
