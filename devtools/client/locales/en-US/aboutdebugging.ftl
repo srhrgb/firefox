@@ -409,6 +409,8 @@ about-debugging-multiprocess-toolbox-description = Main Process and Content Proc
 # Alt text used for the close icon of message component (warnings, errors and notifications).
 about-debugging-message-close-icon =
   .alt = Close message
+  .title = Close message
+  .aria-label = Close message
 
 # Label text used for the error details of message component.
 about-debugging-message-details-label-error = Error details
@@ -418,3 +420,8 @@ about-debugging-message-details-label-warning = Warning details
 
 # Label text used for default state of details of message component.
 about-debugging-message-details-label = Details
+
+# LOCALIZATION NOTE (about-debugging-profiler-dialog-close-button): Title and aria-label of the close button in the profiler dialog.
+about-debugging-profiler-dialog-close-button =
+    .title = Close profiler dialog
+    .aria-label = Close profiler dialog
