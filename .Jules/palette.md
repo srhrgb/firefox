@@ -1,0 +1,3 @@
+## 2024-05-15 - Aria labels for icon-only buttons
+**Learning:** Icon-only buttons without aria-labels are inaccessible to screen readers, making it difficult for visually impaired users to understand their purpose, especially in complex UIs like the Web Console Editor Toolbar.
+**Action:** When adding or auditing icon-only buttons, always ensure they have an `aria-label` attribute describing their function. If a `title` attribute is present for visual tooltips, it is a good practice to use the same text for the `aria-label` or extract the text resolution logic to a shared variable to ensure both are provided consistently.
