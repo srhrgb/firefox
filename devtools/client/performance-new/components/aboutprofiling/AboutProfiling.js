@@ -177,7 +177,7 @@ class MoreActionsButtonImpl extends PureComponent {
       Localized(
         {
           id: "perftools-menu-more-actions-button",
-          attrs: { title: true },
+          attrs: { title: true, "aria-label": true },
         },
         h("moz-button", {
           iconsrc: "chrome://global/skin/icons/more.svg",
