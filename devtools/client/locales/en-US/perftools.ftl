@@ -96,6 +96,7 @@ perftools-button-edit-settings = Edit Settings…
 
 perftools-menu-more-actions-button =
   .title = More actions
+  .aria-label = More actions
 perftools-menu-more-actions-restart-with-profiling = Restart { -brand-shorter-name } with startup profiling enabled
 perftools-menu-more-actions-copy-for-startup = Copy environment variables for startup profiling
 perftools-menu-more-actions-copy-for-perf-tests = Copy parameters for performance tests
