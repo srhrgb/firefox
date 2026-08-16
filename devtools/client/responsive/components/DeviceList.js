@@ -5,6 +5,9 @@
 "use strict";
 
 const {
+  getStr,
+} = require("resource://devtools/client/responsive/utils/l10n.js");
+const {
   createFactory,
   PureComponent,
 } = require("resource://devtools/client/shared/vendor/react.mjs");
@@ -43,6 +46,8 @@ class DeviceList extends PureComponent {
     const removeDeviceButton = dom.button({
       id: "device-edit-remove",
       className: "device-remove-button devtools-button",
+      title: getStr("responsive.removeDevice"),
+      "aria-label": getStr("responsive.removeDevice"),
       onClick: () => {
         onRemoveCustomDevice(device);
         this.props.onDeviceFormHide();
@@ -53,6 +58,8 @@ class DeviceList extends PureComponent {
     const editButton = dom.button({
       id: "device-edit-button",
       className: "devtools-button",
+      title: getStr("responsive.editDevice"),
+      "aria-label": getStr("responsive.editDevice"),
       onClick: () => {
         this.props.onDeviceFormShow("edit", device);
       },
