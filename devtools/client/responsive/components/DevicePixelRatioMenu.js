@@ -82,6 +82,7 @@ class DevicePixelRatioMenu extends PureComponent {
         className: "devtools-button devtools-dropdown-button",
         disabled: isDisabled,
         title,
+        "aria-label": title,
         onClick: this.onShowDevicePixelMenu,
       },
       dom.span(
