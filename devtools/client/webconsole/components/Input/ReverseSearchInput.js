@@ -236,6 +236,11 @@ class ReverseSearchInput extends Component {
       classNames.push("no-result");
     }
 
+    const closeTitle = l10n.getFormatStr(
+      "webconsole.reverseSearch.closeButton.tooltip",
+      ["Esc" + (isMacOS ? " | Ctrl + C" : "")]
+    );
+
     return dom.div(
       { className: classNames.join(" ") },
       dom.input({
@@ -257,10 +262,8 @@ class ReverseSearchInput extends Component {
         this.renderNavigationButtons(),
         dom.button({
           className: "devtools-button reverse-search-close-button",
-          title: l10n.getFormatStr(
-            "webconsole.reverseSearch.closeButton.tooltip",
-            ["Esc" + (isMacOS ? " | Ctrl + C" : "")]
-          ),
+          title: closeTitle,
+          "aria-label": closeTitle,
           onClick: () => {
             dispatch(actions.reverseSearchInputToggle());
           },
