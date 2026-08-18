@@ -171,6 +171,7 @@ class Toolbar extends PureComponent {
           }`,
           onClick: () => onRotateViewport(viewport.id),
           title: getStr("responsive.rotate"),
+          "aria-label": getStr("responsive.rotate"),
         }),
         dom.div({ className: "devtools-separator" }),
         DevicePixelRatioMenu({
@@ -198,6 +199,9 @@ class Toolbar extends PureComponent {
           title: touchSimulationEnabled
             ? getStr("responsive.disableTouch")
             : getStr("responsive.enableTouch"),
+          "aria-label": touchSimulationEnabled
+            ? getStr("responsive.disableTouch")
+            : getStr("responsive.enableTouch"),
           onClick: () => onChangeTouchSimulation(!touchSimulationEnabled),
         })
       ),
@@ -207,6 +211,7 @@ class Toolbar extends PureComponent {
           id: "screenshot-button",
           className: "devtools-button",
           title: getStr("responsive.screenshot"),
+          "aria-label": getStr("responsive.screenshot"),
           onClick: onScreenshot,
           disabled: screenshot.isCapturing,
         }),
