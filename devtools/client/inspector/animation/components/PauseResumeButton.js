@@ -77,6 +77,9 @@ class PauseResumeButton extends PureComponent {
       title: isRunning
         ? getStr("timeline.resumedButtonTooltip")
         : getStr("timeline.pausedButtonTooltip"),
+      "aria-label": isRunning
+        ? getStr("timeline.resumedButtonTooltip")
+        : getStr("timeline.pausedButtonTooltip"),
       ref: this.pauseResumeButtonRef,
     });
   }
