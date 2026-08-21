@@ -139,6 +139,13 @@ class Toolbar extends PureComponent {
       viewport,
     } = this.props;
 
+    const rotateString = getStr("responsive.rotate");
+    const touchString = touchSimulationEnabled
+      ? getStr("responsive.disableTouch")
+      : getStr("responsive.enableTouch");
+    const screenshotString = getStr("responsive.screenshot");
+    const exitString = getStr("responsive.exit");
+
     return dom.header(
       {
         id: "toolbar",
@@ -170,7 +177,8 @@ class Toolbar extends PureComponent {
             viewport.width > viewport.height ? "landscape" : "portrait"
           }`,
           onClick: () => onRotateViewport(viewport.id),
-          title: getStr("responsive.rotate"),
+          title: rotateString,
+          "aria-label": rotateString,
         }),
         dom.div({ className: "devtools-separator" }),
         DevicePixelRatioMenu({
@@ -195,9 +203,8 @@ class Toolbar extends PureComponent {
           id: "touch-simulation-button",
           className:
             "devtools-button" + (touchSimulationEnabled ? " checked" : ""),
-          title: touchSimulationEnabled
-            ? getStr("responsive.disableTouch")
-            : getStr("responsive.enableTouch"),
+          title: touchString,
+          "aria-label": touchString,
           onClick: () => onChangeTouchSimulation(!touchSimulationEnabled),
         })
       ),
@@ -206,7 +213,8 @@ class Toolbar extends PureComponent {
         dom.button({
           id: "screenshot-button",
           className: "devtools-button",
-          title: getStr("responsive.screenshot"),
+          title: screenshotString,
+          "aria-label": screenshotString,
           onClick: onScreenshot,
           disabled: screenshot.isCapturing,
         }),
@@ -220,7 +228,8 @@ class Toolbar extends PureComponent {
         dom.button({
           id: "exit-button",
           className: "devtools-button",
-          title: getStr("responsive.exit"),
+          title: exitString,
+          "aria-label": exitString,
           onClick: onExit,
         })
       )
