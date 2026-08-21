@@ -120,6 +120,7 @@ class SnapshotListItem extends Component {
           },
           className: "delete",
           title: L10N.getStr("snapshot.io.delete"),
+          "aria-label": L10N.getStr("snapshot.io.delete"),
         });
 
     return dom.li(

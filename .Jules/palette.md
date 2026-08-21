@@ -1,0 +1,3 @@
+## 2024-05-19 - Adding Accessible Labels to Icon-Only React Components
+**Learning:** In the Firefox DevTools React components (like `dom.button`), many icon-only buttons rely on just a `title` attribute for their tooltip, but omit an explicitly defined `aria-label`. This causes screen readers to potentially skip announcing the button's purpose effectively if they don't natively pick up the `title` attribute well enough.
+**Action:** When adding or updating icon-only buttons created with `dom.button` (or similar React DOM factories), always explicitly define an `aria-label` attribute alongside `title`, usually using the same localized string value (e.g., `L10N.getStr("...")`).

@@ -127,6 +127,7 @@ class CensusTreeItem extends Component {
           {
             key: `individuals-button-${item.id}`,
             title: L10N.getStr("tree-item.view-individuals.tooltip"),
+            "aria-label": L10N.getStr("tree-item.view-individuals.tooltip"),
             className: "devtools-button individuals-button",
             onClick: e => {
               // Don't let the event bubble up to cause this item to focus after

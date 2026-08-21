@@ -275,6 +275,7 @@ class Heap extends Component {
         {
           className: "devtools-button devtools-button-standalone take-snapshot",
           onClick: onSnapshotClick,
+          "aria-label": L10N.getStr("take-snapshot"),
         },
         L10N.getStr("take-snapshot")
       )
