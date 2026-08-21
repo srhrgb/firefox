@@ -259,6 +259,7 @@ class Toolbar extends Component {
           disabled: !snapshots.length,
           onClick: onClearSnapshotsClick,
           title: L10N.getStr("clear-snapshots.tooltip"),
+          "aria-label": L10N.getStr("clear-snapshots.tooltip"),
         }),
 
         dom.button({
@@ -266,6 +267,7 @@ class Toolbar extends Component {
           className: "take-snapshot devtools-button",
           onClick: onTakeSnapshotClick,
           title: L10N.getStr("take-snapshot"),
+          "aria-label": L10N.getStr("take-snapshot"),
         }),
 
         dom.button({
@@ -275,6 +277,7 @@ class Toolbar extends Component {
           disabled: snapshots.length < 2,
           onClick: onToggleDiffing,
           title: L10N.getStr("diff-snapshots.tooltip"),
+          "aria-label": L10N.getStr("diff-snapshots.tooltip"),
         }),
 
         dom.button({
@@ -282,6 +285,7 @@ class Toolbar extends Component {
           className: "import-snapshot devtools-button",
           onClick: onImportClick,
           title: L10N.getStr("import-snapshot"),
+          "aria-label": L10N.getStr("import-snapshot"),
         })
       ),
 
