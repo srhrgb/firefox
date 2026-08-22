@@ -32,6 +32,7 @@ class NoAnimationPanel extends Component {
 
   render() {
     const { elementPickerEnabled, toggleElementPicker } = this.props;
+    const pickerTooltip = L10N.getStr("panel.elementPickerTooltip");
 
     return dom.div(
       {
@@ -39,6 +40,8 @@ class NoAnimationPanel extends Component {
       },
       dom.p(null, L10N.getStr("panel.noAnimation")),
       dom.button({
+        title: pickerTooltip,
+        "aria-label": pickerTooltip,
         className:
           "animation-element-picker devtools-button devtools-button-standalone" +
           (elementPickerEnabled ? " checked" : ""),
