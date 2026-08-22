@@ -104,6 +104,7 @@ class SettingsMenu extends PureComponent {
   render() {
     return dom.button({
       id: "settings-button",
+      title: getStr("responsive.settingsMenu.tooltip"),
       className: "devtools-button",
       onClick: this.onToggleSettingMenu,
     });
