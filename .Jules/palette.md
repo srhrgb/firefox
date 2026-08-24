@@ -1,0 +1,3 @@
+## 2024-11-20 - Accessible Icon Buttons in DevTools Animation Inspector
+**Learning:** In the Mozilla DevTools codebase (`devtools/client`), icon-only buttons built with React `dom.button` frequently rely only on the `title` attribute for tooltips. Extracting localized strings (e.g., `getStr('tooltip')`) into a variable and passing it to both `title` and `aria-label` provides a clean, DRY approach to making these buttons natively accessible to screen readers without modifying CSS or layout.
+**Action:** When inspecting DevTools components, proactively check `dom.button` instances. If they are icon-only and have a `title` but lack an `aria-label`, apply the `title` string to `aria-label` as well to improve accessibility.

@@ -14,6 +14,11 @@ const {
   getFormattedTitle,
 } = require("resource://devtools/client/inspector/animation/utils/l10n.js");
 
+const { LocalizationHelper } = require("resource://devtools/shared/l10n.js");
+const COMPONENTS_L10N = new LocalizationHelper(
+  "devtools/client/locales/components.properties"
+);
+
 class AnimationDetailHeader extends PureComponent {
   static get propTypes() {
     return {
@@ -30,6 +35,7 @@ class AnimationDetailHeader extends PureComponent {
 
   render() {
     const { animation } = this.props;
+    const titleText = COMPONENTS_L10N.getStr("notificationBox.closeTooltip");
 
     return dom.div(
       {
@@ -44,6 +50,8 @@ class AnimationDetailHeader extends PureComponent {
       dom.button({
         className: "animation-detail-close-button devtools-button",
         onClick: this.onClick.bind(this),
+        title: titleText,
+        "aria-label": titleText,
       })
     );
   }
