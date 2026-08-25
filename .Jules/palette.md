@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing ARIA labels in Animation Inspector buttons
+**Learning:** Found icon-only buttons (`NoAnimationPanel`, `AnimationDetailHeader`, `RewindButton`, `PauseResumeButton` in Animation inspector) created with React DOM factories (`dom.button`) that have CSS classes for icons but lack `aria-label`. Note that `RewindButton` and `PauseResumeButton` have `title` attribute, but missing `aria-label` which is critical for screen readers for accessibility. `AnimationDetailHeader` and `NoAnimationPanel` are missing `title` and `aria-label`.
+**Action:** Adding `aria-label` to these components to ensure keyboard and screen reader accessibility, relying on localization from `.properties`.
