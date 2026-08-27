@@ -362,6 +362,7 @@ class Tabs extends Component {
       ? dom.button({
           className: "all-tabs-menu",
           title: this.props.allTabsMenuButtonTooltip,
+          "aria-label": this.props.allTabsMenuButtonTooltip,
           onClick: this.props.onAllTabsMenuClick,
         })
       : null;
