@@ -262,6 +262,7 @@ class SearchBox extends PureComponent {
         hidden: value === "",
         onClick: this.onClearButtonClick,
         title: l10n.getStr("searchBox.clearButtonTitle"),
+        "aria-label": l10n.getStr("searchBox.clearButtonTitle"),
       }),
       showAutocomplete &&
         SearchBoxAutocompletePopup({

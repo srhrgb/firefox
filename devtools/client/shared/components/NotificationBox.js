@@ -272,6 +272,7 @@ class NotificationBox extends Component {
           ? button({
               className: "messageCloseButton",
               title: this.props.closeButtonTooltip,
+              "aria-label": this.props.closeButtonTooltip,
               onClick: this.close.bind(this, notification),
             })
           : null
