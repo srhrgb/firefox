@@ -68,6 +68,7 @@ class SearchModifiers extends Component {
           }
         },
         title: tooltip,
+        "aria-label": tooltip,
       },
       span({ className: svgName })
     );
