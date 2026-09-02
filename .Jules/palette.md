@@ -1,0 +1,3 @@
+## 2024-05-17 - Added missing aria-labels for responsive design mode Toolbar icon buttons
+**Learning:** Icon-only buttons implemented with `dom.button` missing `aria-label` attribute but having `title` will only present tooltip text on hover, but are not properly announced by screen readers without aria-label. The `touchSimulationEnabled` conditional tooltip logic needs to be extracted out of the component's render props to ensure the same dynamic string is passed to both `title` and `aria-label`.
+**Action:** Extract conditional `title` text strings into explicit consts before component rendering so they can be provided simultaneously as `title` and `aria-label` props to accessibility-dependent icon buttons.
