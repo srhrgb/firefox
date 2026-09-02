@@ -1,0 +1,3 @@
+## 2024-05-18 - Added `aria-label`s to RDM Toolbar and Modals
+**Learning:** In Firefox DevTools components built using React DOM factories (like `dom.button`), visual tooltips powered solely by the `title` attribute are insufficient for comprehensive screen reader accessibility. Interactive icon-only controls must explicitly declare `aria-label`s.
+**Action:** When working on DevTools components containing icon-only elements (such as device settings and toolbar controls), proactively ensure `aria-label`s are wired up using localized string getters (`getStr()`) in parallel with the `title` attribute.
