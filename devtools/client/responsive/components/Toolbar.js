@@ -166,6 +166,7 @@ class Toolbar extends PureComponent {
         }),
         dom.button({
           id: "rotate-button",
+          "aria-label": getStr("responsive.rotate"),
           className: `devtools-button viewport-orientation-${
             viewport.width > viewport.height ? "landscape" : "portrait"
           }`,
@@ -193,6 +194,9 @@ class Toolbar extends PureComponent {
         this.renderUserAgent(),
         dom.button({
           id: "touch-simulation-button",
+          "aria-label": touchSimulationEnabled
+            ? getStr("responsive.disableTouch")
+            : getStr("responsive.enableTouch"),
           className:
             "devtools-button" + (touchSimulationEnabled ? " checked" : ""),
           title: touchSimulationEnabled
@@ -205,6 +209,7 @@ class Toolbar extends PureComponent {
         { id: "toolbar-end-controls" },
         dom.button({
           id: "screenshot-button",
+          "aria-label": getStr("responsive.screenshot"),
           className: "devtools-button",
           title: getStr("responsive.screenshot"),
           onClick: onScreenshot,
@@ -219,6 +224,7 @@ class Toolbar extends PureComponent {
         dom.div({ className: "devtools-separator" }),
         dom.button({
           id: "exit-button",
+          "aria-label": getStr("responsive.exit"),
           className: "devtools-button",
           title: getStr("responsive.exit"),
           onClick: onExit,
