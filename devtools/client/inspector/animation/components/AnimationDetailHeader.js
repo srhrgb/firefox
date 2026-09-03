@@ -5,14 +5,15 @@
 "use strict";
 
 const {
+  getStr,
+  getFormattedTitle,
+} = require("resource://devtools/client/inspector/animation/utils/l10n.js");
+
+const {
   PureComponent,
 } = require("resource://devtools/client/shared/vendor/react.mjs");
 const dom = require("resource://devtools/client/shared/vendor/react-dom-factories.js");
 const PropTypes = require("resource://devtools/client/shared/vendor/react-prop-types.mjs");
-
-const {
-  getFormattedTitle,
-} = require("resource://devtools/client/inspector/animation/utils/l10n.js");
 
 class AnimationDetailHeader extends PureComponent {
   static get propTypes() {
@@ -43,6 +44,8 @@ class AnimationDetailHeader extends PureComponent {
       ),
       dom.button({
         className: "animation-detail-close-button devtools-button",
+        title: getStr("timeline.details.closeButtonTooltip"),
+        "aria-label": getStr("timeline.details.closeButtonTooltip"),
         onClick: this.onClick.bind(this),
       })
     );
