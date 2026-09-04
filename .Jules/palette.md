@@ -1,0 +1,3 @@
+## 2024-05-15 - RDM Toolbar Accessibility Improvement
+**Learning:** React component `<button>` elements in Firefox DevTools UI built via `dom.button()` often rely solely on visual icons combined with a `title` attribute for tooltips. While `title` acts as a fallback accessible name in some contexts, explicitly mirroring it to an `aria-label` provides much more robust support for assistive technology.
+**Action:** When adding or auditing icon-only `dom.button()` instances in DevTools React components, ensure that both `title` and `aria-label` are provided and share the same localized text string for comprehensive screen reader support.
