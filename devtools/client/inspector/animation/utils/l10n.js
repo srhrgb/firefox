@@ -8,6 +8,9 @@ const { LocalizationHelper } = require("resource://devtools/shared/l10n.js");
 const L10N = new LocalizationHelper(
   "devtools/client/locales/animationinspector.properties"
 );
+const TOOLBOX_L10N = new LocalizationHelper(
+  "devtools/client/locales/toolbox.properties"
+);
 const INSPECTOR_L10N = new LocalizationHelper(
   "devtools/client/locales/inspector.properties"
 );
@@ -37,10 +40,19 @@ function getFormattedTitle(state) {
   return L10N.getFormatStr(`timeline.${state.type}.nameLabel`, state.name);
 }
 
+function getInspectorStr(...args) {
+  return INSPECTOR_L10N.getStr(...args);
+}
+
+function getToolboxStr(...args) {
+  return TOOLBOX_L10N.getFormatStr(...args);
+}
+
 module.exports = {
   getFormatStr: (...args) => L10N.getFormatStr(...args),
   getFormattedTitle,
-  getInspectorStr: (...args) => INSPECTOR_L10N.getStr(...args),
+  getInspectorStr,
   getStr: (...args) => L10N.getStr(...args),
+  getToolboxStr,
   numberWithDecimals: (...args) => L10N.numberWithDecimals(...args),
 };

@@ -12,6 +12,9 @@ const PropTypes = require("resource://devtools/client/shared/vendor/react-prop-t
 const {
   connect,
 } = require("resource://devtools/client/shared/vendor/react-redux.js");
+const {
+  getToolboxStr,
+} = require("resource://devtools/client/inspector/animation/utils/l10n.js");
 const { LocalizationHelper } = require("resource://devtools/shared/l10n.js");
 
 const L10N = new LocalizationHelper(
@@ -46,6 +49,8 @@ class NoAnimationPanel extends Component {
           event.stopPropagation();
           toggleElementPicker();
         },
+        title: getToolboxStr("toolbox.elementPicker.tooltip", ""),
+        "aria-label": getToolboxStr("toolbox.elementPicker.tooltip", ""),
       })
     );
   }
