@@ -132,20 +132,33 @@ class ProfilerDialog extends PureComponent {
               "about-debugging-profiler-dialog-title2"
             )
           ),
-          dom.button(
+          Localized(
             {
-              className: "ghost-button qa-profiler-dialog-close",
-              onClick: () => {
-                if (profilerContext === PROFILER_PAGE_CONTEXT.DEVTOOLS_REMOTE) {
-                  this.hide();
-                } else {
-                  switchProfilerContext(PROFILER_PAGE_CONTEXT.DEVTOOLS_REMOTE);
-                }
+              id: "about-debugging-profiler-dialog-close",
+              attrs: {
+                title: true,
+                "aria-label": true,
               },
             },
-            dom.img({
-              src: "chrome://devtools/skin/images/close.svg",
-            })
+            dom.button(
+              {
+                className: "ghost-button qa-profiler-dialog-close",
+                onClick: () => {
+                  if (
+                    profilerContext === PROFILER_PAGE_CONTEXT.DEVTOOLS_REMOTE
+                  ) {
+                    this.hide();
+                  } else {
+                    switchProfilerContext(
+                      PROFILER_PAGE_CONTEXT.DEVTOOLS_REMOTE
+                    );
+                  }
+                },
+              },
+              dom.img({
+                src: "chrome://devtools/skin/images/close.svg",
+              })
+            )
           )
         ),
         this.renderProfilerIframe()

@@ -1,0 +1,3 @@
+## $(date +%Y-%m-%d) - Added Title/ARIA-Label to Profiler Dialog Close Button
+**Learning:** Found an icon-only button without an accessibility label in the `about:debugging` Profiler Dialog UI. Discovered that the localized messages must be correctly imported via `Localized` from `FluentReact`. When modifying components that use `FluentReact.Localized`, you wrap `dom.button` to apply title and aria-label by specifying it inside `attrs: { title: true, "aria-label": true }` object properties, rather than inside the `dom.button` attributes.
+**Action:** Always check `dom.button` and other generic components for clear tooltips and screen reader accessible `aria-label` properties, specifically when using localization wrappers like `Localized`.
