@@ -136,12 +136,13 @@ class Settings extends PureComponent {
       Localized(
         {
           id: "compatibility-close-settings-button",
-          attrs: { title: true },
+          attrs: { title: true, "aria-label": true },
         },
         dom.button(
           {
             className: "compatibility-settings__header-button",
             title: "compatibility-close-settings-button",
+            "aria-label": "compatibility-close-settings-button",
             onClick: () => {
               const { defaultTargetBrowsers } = this.props;
               const { targetBrowsers } = this.state;

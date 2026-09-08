@@ -19,12 +19,14 @@ exports[`Settings component renders default browsers with a selected browsers 1`
     <Localized
       attrs={
         Object {
+          "aria-label": true,
           "title": true,
         }
       }
       id="compatibility-close-settings-button"
     >
       <button
+        aria-label="compatibility-close-settings-button"
         className="compatibility-settings__header-button"
         onClick={[Function]}
         title="compatibility-close-settings-button"
@@ -141,12 +143,14 @@ exports[`Settings component renders default browsers with full selected browsers
     <Localized
       attrs={
         Object {
+          "aria-label": true,
           "title": true,
         }
       }
       id="compatibility-close-settings-button"
     >
       <button
+        aria-label="compatibility-close-settings-button"
         className="compatibility-settings__header-button"
         onClick={[Function]}
         title="compatibility-close-settings-button"
@@ -263,12 +267,14 @@ exports[`Settings component renders default browsers with no selected browsers 1
     <Localized
       attrs={
         Object {
+          "aria-label": true,
           "title": true,
         }
       }
       id="compatibility-close-settings-button"
     >
       <button
+        aria-label="compatibility-close-settings-button"
         className="compatibility-settings__header-button"
         onClick={[Function]}
         title="compatibility-close-settings-button"

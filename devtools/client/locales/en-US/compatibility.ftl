@@ -42,6 +42,7 @@ compatibility-issue-occurrences =
 compatibility-no-issues-found = No compatibility issues found.
 compatibility-close-settings-button =
     .title = Close settings
+    .aria-label = Close settings
 
 # Text used in the element containing the browser icons for a given compatibility issue.
 # Line breaks are significant.
