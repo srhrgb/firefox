@@ -102,7 +102,10 @@ class SettingsMenu extends PureComponent {
   }
 
   render() {
+    const deviceSettingsTitle = getStr("responsive.deviceSettings");
     return dom.button({
+      title: deviceSettingsTitle,
+      "aria-label": deviceSettingsTitle,
       id: "settings-button",
       className: "devtools-button",
       onClick: this.onToggleSettingMenu,
