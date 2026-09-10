@@ -1,0 +1,3 @@
+## 2024-10-25 - Adding aria-labels to DevTools Responsive Toolbar Buttons
+**Learning:** In Firefox DevTools React components using `dom.button`, icon-only buttons often rely solely on the `title` attribute for tooltips. For full screen reader accessibility, explicitly providing an `aria-label` (usually matching the `title`) is required, and localized string variables can be hoisted to the top of the render block to keep the logic DRY.
+**Action:** When inspecting DevTools `dom.button` elements, always check if they are icon-only and missing `aria-label`s, and reuse localized strings for both `title` and `aria-label`.
