@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing ARIA label and title on Profiler Dialog close button
+**Learning:** Icon-only buttons (like the Close button in the Profiler Dialog) in DevTools React components using DOM factories often lack both an `aria-label` for screen reader accessibility and a `title` attribute for mouse hover tooltips, relying solely on the SVG image without proper accessible names.
+**Action:** Wrapped the Close `dom.button` in `FluentReact.Localized` and explicitly enabled both `title` and `aria-label` via the `attrs` object property, mapping them to standard `.title` and `.aria-label` properties in the `.ftl` localization file, creating a unified accessible label and tooltip.
