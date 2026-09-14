@@ -81,6 +81,10 @@ class SideBar extends Component {
       customFormat: false,
     });
 
+    const closeSidebarTitle = l10n.getStr(
+      "webconsole.closeSidebarButton.tooltip"
+    );
+
     return [
       dom.aside(
         {
@@ -96,7 +100,8 @@ class SideBar extends Component {
           },
           dom.button({
             className: "devtools-button sidebar-close-button",
-            title: l10n.getStr("webconsole.closeSidebarButton.tooltip"),
+            title: closeSidebarTitle,
+            "aria-label": closeSidebarTitle,
             onClick: this.onClickSidebarClose,
           })
         ),

@@ -195,14 +195,22 @@ class ReverseSearchInput extends Component {
       return null;
     }
 
+    const prevTitle = l10n.getFormatStr(
+      "webconsole.reverseSearch.result.previousButton.tooltip",
+      [isMacOS ? "Ctrl + R" : "F9"]
+    );
+
+    const nextTitle = l10n.getFormatStr(
+      "webconsole.reverseSearch.result.nextButton.tooltip",
+      [isMacOS ? "Ctrl + S" : "Shift + F9"]
+    );
+
     return [
       dom.button({
         key: "search-result-button-prev",
         className: "devtools-button search-result-button-prev",
-        title: l10n.getFormatStr(
-          "webconsole.reverseSearch.result.previousButton.tooltip",
-          [isMacOS ? "Ctrl + R" : "F9"]
-        ),
+        title: prevTitle,
+        "aria-label": prevTitle,
         onClick: () => {
           dispatch(actions.showReverseSearchBack({ access: "click" }));
           this.inputNode.focus();
@@ -211,10 +219,8 @@ class ReverseSearchInput extends Component {
       dom.button({
         key: "search-result-button-next",
         className: "devtools-button search-result-button-next",
-        title: l10n.getFormatStr(
-          "webconsole.reverseSearch.result.nextButton.tooltip",
-          [isMacOS ? "Ctrl + S" : "Shift + F9"]
-        ),
+        title: nextTitle,
+        "aria-label": nextTitle,
         onClick: () => {
           dispatch(actions.showReverseSearchNext({ access: "click" }));
           this.inputNode.focus();
@@ -249,23 +255,27 @@ class ReverseSearchInput extends Component {
         onInput: ({ target }) =>
           dispatch(actions.reverseSearchInputChange(target.value)),
       }),
-      dom.div(
-        {
-          className: "reverse-search-actions",
-        },
-        this.renderSearchInformation(),
-        this.renderNavigationButtons(),
-        dom.button({
-          className: "devtools-button reverse-search-close-button",
-          title: l10n.getFormatStr(
-            "webconsole.reverseSearch.closeButton.tooltip",
-            ["Esc" + (isMacOS ? " | Ctrl + C" : "")]
-          ),
-          onClick: () => {
-            dispatch(actions.reverseSearchInputToggle());
+      (() => {
+        const closeTitle = l10n.getFormatStr(
+          "webconsole.reverseSearch.closeButton.tooltip",
+          ["Esc" + (isMacOS ? " | Ctrl + C" : "")]
+        );
+        return dom.div(
+          {
+            className: "reverse-search-actions",
           },
-        })
-      )
+          this.renderSearchInformation(),
+          this.renderNavigationButtons(),
+          dom.button({
+            className: "devtools-button reverse-search-close-button",
+            title: closeTitle,
+            "aria-label": closeTitle,
+            onClick: () => {
+              dispatch(actions.reverseSearchInputToggle());
+            },
+          })
+        );
+      })()
     );
   }
 }
