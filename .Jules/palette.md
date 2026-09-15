@@ -1,0 +1,3 @@
+## 2024-11-20 - Adding Accessibility Labels to Icon-only DevTools Controls
+**Learning:** In Firefox DevTools React components (like the responsive mode Toolbar), icon-only controls (e.g. `SettingsMenu`) often lack `title` attributes resulting in missing tooltips and missing accessible labels for screen readers. Since Playwright headless UI testing is unavailable in this sandbox without the Firefox browser host, visual verification of tooltips cannot be automated.
+**Action:** When adding UX tooltips (`title`) or accessibility labels to DevTools React component factories (like `dom.button`), always rely on `./mach devtools-node-test` and manually ensure localization properties are added and fetched using `getStr()`, without depending on Playwright scripts.
