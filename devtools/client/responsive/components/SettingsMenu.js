@@ -106,6 +106,7 @@ class SettingsMenu extends PureComponent {
       id: "settings-button",
       className: "devtools-button",
       onClick: this.onToggleSettingMenu,
+      title: getStr("responsive.settings"),
     });
   }
 }
