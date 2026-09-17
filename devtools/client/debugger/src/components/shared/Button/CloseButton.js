@@ -14,6 +14,7 @@ function CloseButton({ handleClick, buttonClass, tooltip }) {
       className: buttonClass ? `close-btn ${buttonClass}` : "close-btn",
       onClick: handleClick,
       title: tooltip,
+      "aria-label": tooltip,
     },
     React.createElement(DebuggerImage, {
       name: "close",
