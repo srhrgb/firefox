@@ -11,6 +11,9 @@ const L10N = new LocalizationHelper(
 const INSPECTOR_L10N = new LocalizationHelper(
   "devtools/client/locales/inspector.properties"
 );
+const COMPONENTS_L10N = new LocalizationHelper(
+  "devtools/client/locales/components.properties"
+);
 
 /**
  * Get a formatted title for this animation. This will be either:
@@ -38,6 +41,7 @@ function getFormattedTitle(state) {
 }
 
 module.exports = {
+  getComponentsStr: (...args) => COMPONENTS_L10N.getStr(...args),
   getFormatStr: (...args) => L10N.getFormatStr(...args),
   getFormattedTitle,
   getInspectorStr: (...args) => INSPECTOR_L10N.getStr(...args),
