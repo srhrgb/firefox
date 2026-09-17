@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing ARIA Labels in Icon-only Buttons
+**Learning:** React components containing icon-only buttons in the Debugger component (like `CloseButton` and `CommandBarButton`) were missing `aria-label` attributes for accessibility. While they had `title` attributes that provide visual tooltips, screen readers often rely on `aria-label` for clear identification of icon-only interactive controls.
+**Action:** When working with shared button components or creating new ones, explicitly pass or map the `title` text to `aria-label` on the underlying `button` element to ensure screen reader accessibility for icon-only controls.

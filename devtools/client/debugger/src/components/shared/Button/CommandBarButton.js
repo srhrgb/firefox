@@ -40,6 +40,7 @@ const CommandBarButton = props => {
     {
       "aria-pressed": pressed,
       className: classnames("command-bar-button", className),
+      "aria-label": rest.title,
       ...rest,
     },
     children
