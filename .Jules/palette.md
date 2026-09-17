@@ -1,0 +1,3 @@
+## $(date +%Y-%m-%d) - Reusing Shared Strings for Common UI Actions
+**Learning:** Common UI actions like "Close" are often localized in shared properties files (like `components.properties`) rather than tool-specific files (like `animationinspector.properties`) to maintain consistency. When improving accessibility across different DevTools panels, check shared L10N resources first to avoid duplicating strings or leaving them untranslated.
+**Action:** When adding standard tooltips or ARIA labels (e.g., Close, Refresh, Cancel) to icon-only buttons, inject a shared LocalizationHelper (e.g., `COMPONENTS_L10N`) into the component's l10n utility before defaulting to creating new panel-specific strings.
