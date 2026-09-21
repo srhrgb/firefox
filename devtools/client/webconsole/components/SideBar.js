@@ -73,6 +73,10 @@ class SideBar extends Component {
   render() {
     const { front, serviceContainer } = this.props;
 
+    const closeSidebarButtonTooltip = l10n.getStr(
+      "webconsole.closeSidebarButton.tooltip"
+    );
+
     const objectInspector = getObjectInspector(front, serviceContainer, {
       autoExpandDepth: 1,
       mode: reps.MODE.SHORT,
@@ -96,7 +100,8 @@ class SideBar extends Component {
           },
           dom.button({
             className: "devtools-button sidebar-close-button",
-            title: l10n.getStr("webconsole.closeSidebarButton.tooltip"),
+            title: closeSidebarButtonTooltip,
+            "aria-label": closeSidebarButtonTooltip,
             onClick: this.onClickSidebarClose,
           })
         ),
