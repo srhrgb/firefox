@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility for Icon-only Element Pickers
+**Learning:** In Firefox DevTools, icon-only buttons created via React DOM factories (e.g., `dom.button`) often rely on CSS for their icons but lack both a visual tooltip (`title`) and screen-reader context (`aria-label`), making them inaccessible and undiscoverable.
+**Action:** When adding accessible attributes to a localized component in React DevTools, define the localization string in `.properties` and extract the localized string variable once at the top of `render()` so it can be cleanly applied to both `aria-label` and `title` without repeating the getter function or relying on inline immediately invoked functions.
