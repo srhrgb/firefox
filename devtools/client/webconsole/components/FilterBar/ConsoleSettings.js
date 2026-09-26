@@ -182,6 +182,9 @@ class ConsoleSettings extends Component {
         menuId: "webconsole-console-settings-menu-button",
         toolboxDoc: toolbox ? toolbox.doc : doc,
         className: "devtools-button webconsole-console-settings-menu-button",
+        "aria-label": l10n.getStr(
+          "webconsole.console.settings.menu.button.tooltip"
+        ),
         title: l10n.getStr("webconsole.console.settings.menu.button.tooltip"),
       },
       // We pass the children in a function so we don't require the MenuItem and MenuList
