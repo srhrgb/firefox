@@ -139,6 +139,10 @@ class Toolbar extends PureComponent {
       viewport,
     } = this.props;
 
+    const touchSimString = touchSimulationEnabled
+      ? getStr("responsive.disableTouch")
+      : getStr("responsive.enableTouch");
+
     return dom.header(
       {
         id: "toolbar",
@@ -171,6 +175,7 @@ class Toolbar extends PureComponent {
           }`,
           onClick: () => onRotateViewport(viewport.id),
           title: getStr("responsive.rotate"),
+          "aria-label": getStr("responsive.rotate"),
         }),
         dom.div({ className: "devtools-separator" }),
         DevicePixelRatioMenu({
@@ -195,9 +200,8 @@ class Toolbar extends PureComponent {
           id: "touch-simulation-button",
           className:
             "devtools-button" + (touchSimulationEnabled ? " checked" : ""),
-          title: touchSimulationEnabled
-            ? getStr("responsive.disableTouch")
-            : getStr("responsive.enableTouch"),
+          title: touchSimString,
+          "aria-label": touchSimString,
           onClick: () => onChangeTouchSimulation(!touchSimulationEnabled),
         })
       ),
@@ -207,6 +211,7 @@ class Toolbar extends PureComponent {
           id: "screenshot-button",
           className: "devtools-button",
           title: getStr("responsive.screenshot"),
+          "aria-label": getStr("responsive.screenshot"),
           onClick: onScreenshot,
           disabled: screenshot.isCapturing,
         }),
@@ -221,6 +226,7 @@ class Toolbar extends PureComponent {
           id: "exit-button",
           className: "devtools-button",
           title: getStr("responsive.exit"),
+          "aria-label": getStr("responsive.exit"),
           onClick: onExit,
         })
       )
