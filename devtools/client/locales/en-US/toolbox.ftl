@@ -46,5 +46,7 @@ toolbox-mode-parent-process-container =
 
 toolbox-always-on-top-enabled2 = Disable always on top
   .title = This will restart the Developer Tools
+  .aria-label = This will restart the Developer Tools
 toolbox-always-on-top-disabled2 = Enable always on top
   .title = This will restart the Developer Tools
+  .aria-label = This will restart the Developer Tools

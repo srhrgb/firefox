@@ -323,7 +323,7 @@ class DebugTargetInfo extends PureComponent {
           id: checked
             ? "toolbox-always-on-top-enabled2"
             : "toolbox-always-on-top-disabled2",
-          attrs: { title: true },
+          attrs: { title: true, "aria-label": true },
         },
         dom.button({
           className:
