@@ -1,0 +1,3 @@
+## 2024-05-14 - Animation Inspector Icon Button ARIA labels
+**Learning:** Found an icon-only close button `AnimationDetailHeader.js` (`animation-detail-close-button`) lacking an `aria-label` or `title` which makes it undiscoverable and unidentifiable by screen readers, a common pattern to watch for in DevTools UI where CSS-based icons don't always have textual fallback explicitly set.
+**Action:** Added localized `timeline.animationDetailCloseButtonTooltip` as both the `title` (for tooltip hover) and `aria-label` (for screen readers). Always double check that pure visual controls like this specify both for comprehensive accessibility.
