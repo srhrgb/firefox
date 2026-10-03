@@ -1,0 +1,3 @@
+## 2024-10-03 - Localizing Button Attributes
+**Learning:** When adding accessibility attributes like `aria-label` and `title` to an icon-only button wrapped in a `Localized` component, the `Localized` component must wrap the `dom.button` itself, not just the inner `dom.img`. The attributes will only be correctly applied if the `Localized` component wraps the parent element. Furthermore, inside `.ftl` files, the new keys need to be defined with dot notation (e.g., `.title` and `.aria-label`) and in the JS file the corresponding fields must be set to `true` inside `attrs`.
+**Action:** Always wrap the actual interactive element (e.g. `dom.button` or `dom.a`) with the `Localized` component to ensure ARIA labels and tooltips are applied properly to the accessible target.
