@@ -408,7 +408,8 @@ about-debugging-multiprocess-toolbox-description = Main Process and Content Proc
 
 # Alt text used for the close icon of message component (warnings, errors and notifications).
 about-debugging-message-close-icon =
-  .alt = Close message
+  .title = Close message
+  .aria-label = Close message
 
 # Label text used for the error details of message component.
 about-debugging-message-details-label-error = Error details
