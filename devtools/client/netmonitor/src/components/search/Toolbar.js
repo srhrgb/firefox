@@ -91,6 +91,7 @@ class Toolbar extends Component {
       className:
         "devtools-button devtools-clear-icon ws-frames-list-clear-button",
       title: L10N.getStr("netmonitor.search.toolbar.clear"),
+      "aria-label": L10N.getStr("netmonitor.search.toolbar.clear"),
       onClick: () => {
         this.props.clearSearchResults();
       },
