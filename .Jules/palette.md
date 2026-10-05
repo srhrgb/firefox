@@ -1,0 +1,3 @@
+## 2024-10-24 - Accessibility improvements for Firefox DevTools icon-only button
+**Learning:** Found an icon-only button in the Animation Inspector panel (`animation-element-picker`) that lacked any accessible name or tooltip (`title` / `aria-label`). Users relying on screen readers or mouse hover had no context for what this standalone button did.
+**Action:** When adding missing tooltips to icon-only buttons in Firefox DevTools React components (`dom.button()`), use `LocalizationHelper` to fetch localized strings, pass them as `title` attributes, and ensure the localization strings are defined in the relevant `.properties` file with clear translator notes.
