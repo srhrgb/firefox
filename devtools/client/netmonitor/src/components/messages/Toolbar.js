@@ -80,6 +80,7 @@ class Toolbar extends Component {
       className:
         "devtools-button devtools-clear-icon message-list-clear-button",
       title: MSG_TOOLBAR_CLEAR,
+      "aria-label": MSG_TOOLBAR_CLEAR,
       onClick: () => {
         clearMessages();
       },
