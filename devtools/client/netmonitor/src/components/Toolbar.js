@@ -324,6 +324,7 @@ class Toolbar extends Component {
       className:
         "devtools-button devtools-clear-icon requests-list-clear-button",
       title: TOOLBAR_CLEAR,
+      "aria-label": TOOLBAR_CLEAR,
       onClick: clearRequests,
     });
   }
@@ -335,6 +336,7 @@ class Toolbar extends Component {
     return button({
       className: "devtools-button requests-list-pause-button",
       title: TOOLBAR_TOGGLE_RECORDING,
+      "aria-label": TOOLBAR_TOGGLE_RECORDING,
       "aria-pressed": !recording,
       onClick: toggleRecording,
     });
@@ -368,6 +370,7 @@ class Toolbar extends Component {
     return button({
       className: className.join(" "),
       title: TOOLBAR_BLOCKING,
+      "aria-label": TOOLBAR_BLOCKING,
       "aria-pressed":
         networkActionBarOpen &&
         networkActionBarSelectedPanel === PANELS.BLOCKING,
@@ -384,6 +387,7 @@ class Toolbar extends Component {
     return button({
       className: "devtools-button devtools-search-icon",
       title: TOOLBAR_SEARCH,
+      "aria-label": TOOLBAR_SEARCH,
       "aria-pressed":
         networkActionBarOpen && networkActionBarSelectedPanel === PANELS.SEARCH,
       onClick: toggleSearchPanel,
@@ -412,6 +416,7 @@ class Toolbar extends Component {
     return button({
       className: "devtools-button devtools-http-custom-request-icon",
       title: TOOLBAR_HTTP_CUSTOM_REQUEST,
+      "aria-label": TOOLBAR_HTTP_CUSTOM_REQUEST,
       "aria-pressed":
         networkActionBarOpen &&
         networkActionBarSelectedPanel === PANELS.HTTP_CUSTOM_REQUEST,
@@ -504,6 +509,7 @@ class Toolbar extends Component {
         toolboxDoc,
         className: "devtools-button netmonitor-settings-menu-button",
         title: L10N.getStr("netmonitor.settings.menuTooltip"),
+        "aria-label": L10N.getStr("netmonitor.settings.menuTooltip"),
       },
       // We pass the children in a function so we don't require the MenuItem and MenuList
       // components until we need to display them (i.e. when the button is clicked).
