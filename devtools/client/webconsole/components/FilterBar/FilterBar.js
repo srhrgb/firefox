@@ -215,6 +215,17 @@ class FilterBar extends Component {
           )
           .join(", "),
       ]),
+      "aria-label": l10n.getFormatStr(
+        "webconsole.clearButton.tooltipWithHotkeyHint",
+        [
+          this.props.webConsoleUI
+            .getClearKeyShortcuts()
+            .map(electronKey =>
+              KeyShortcuts.stringifyFromElectronKey(electronKey)
+            )
+            .join(", "),
+        ]
+      ),
       onClick: () => this.props.dispatch(actions.messagesClear()),
     });
   }
@@ -369,6 +380,7 @@ class FilterBar extends Component {
         key: "split-console-close-button",
         className: "devtools-button",
         title: l10n.getStr("webconsole.closeSplitConsoleButton.tooltip"),
+        "aria-label": l10n.getStr("webconsole.closeSplitConsoleButton.tooltip"),
         onClick: () => {
           closeSplitConsole();
         },
