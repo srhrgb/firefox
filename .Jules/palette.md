@@ -1,0 +1,3 @@
+## 2024-10-09 - Accessibility for Icon-Only Buttons in Mozilla DevTools
+**Learning:** In the Mozilla DevTools codebase using React DOM factories, icon-only components like `PauseResumeButton.js` and `RewindButton.js` frequently rely solely on the `title` attribute for tooltips, but miss `aria-label`s for full screen reader accessibility.
+**Action:** Always provide explicit `aria-label` attributes to icon-only buttons in addition to `title` (or wrap them in `FluentReact.Localized` with `{ "aria-label": true, "title": true }` where Fluent is used). Extract `getStr()` logic to top of `render()` when reusing the same text for both attributes.
