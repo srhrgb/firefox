@@ -1,0 +1,3 @@
+## 2024-10-10 - Missing ARIA Labels on DevTools Toolbar Buttons
+**Learning:** Firefox DevTools UI (specifically the Responsive Design Mode toolbar) often relies solely on `title` attributes for tooltips on icon-only buttons created via React DOM factories (like `dom.button`). While this provides visual tooltips on hover, relying only on `title` is insufficient for robust screen reader accessibility.
+**Action:** Always explicitly provide an `aria-label` that mirrors the localized `title` text for icon-only buttons to ensure full screen reader support and compliance with accessibility standards.
