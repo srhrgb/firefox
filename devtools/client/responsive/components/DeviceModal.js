@@ -274,6 +274,8 @@ class DeviceModal extends PureComponent {
                   id: "device-close-button",
                   className: "devtools-button",
                   onClick: () => onUpdateDeviceModal(false),
+                  title: getStr("responsive.deviceClose.title"),
+                  "aria-label": getStr("responsive.deviceClose.title"),
                 })
               )
             : null,
