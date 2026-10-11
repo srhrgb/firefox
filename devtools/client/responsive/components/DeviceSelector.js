@@ -163,6 +163,7 @@ class DeviceSelector extends PureComponent {
         label,
         icon,
         title: tooltip,
+        "aria-label": tooltip,
         disabled: devices.listState !== Types.loadableState.LOADED,
       },
       () => this.renderMenuList()

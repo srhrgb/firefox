@@ -119,6 +119,7 @@ class Device extends PureComponent {
         className: "device-label",
         key: device.name,
         title: tooltip,
+        "aria-label": tooltip,
       },
       dom.input({
         className: "device-input-checkbox",

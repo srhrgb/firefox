@@ -219,6 +219,7 @@ class UserAgentInput extends PureComponent {
           className: "devtools-button devtools-dropdown-button",
           label: "",
           title: getStr("responsive.userAgentList"),
+          "aria-label": getStr("responsive.userAgentList"),
         },
         () => this.renderMenuList()
       )
