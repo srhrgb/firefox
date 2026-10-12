@@ -16,6 +16,9 @@ const Types = require("resource://devtools/client/responsive/types.js");
 const Device = createFactory(
   require("resource://devtools/client/responsive/components/Device.js")
 );
+const {
+  getStr,
+} = require("resource://devtools/client/responsive/utils/l10n.js");
 
 class DeviceList extends PureComponent {
   static get propTypes() {
@@ -47,6 +50,8 @@ class DeviceList extends PureComponent {
         onRemoveCustomDevice(device);
         this.props.onDeviceFormHide();
       },
+      title: getStr("responsive.removeDevice"),
+      "aria-label": getStr("responsive.removeDevice"),
     });
 
     // Show an edit button for custom devices
@@ -56,6 +61,8 @@ class DeviceList extends PureComponent {
       onClick: () => {
         this.props.onDeviceFormShow("edit", device);
       },
+      title: getStr("responsive.editDevice"),
+      "aria-label": getStr("responsive.editDevice"),
     });
 
     return Device(
