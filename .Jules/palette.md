@@ -1,0 +1,3 @@
+## 2024-10-13 - Add ARIA labels to icon-only buttons
+**Learning:** In Firefox DevTools React components using `dom.button`, icon-only buttons often rely solely on the `title` attribute for tooltips. This is visually helpful but fails to provide accessible names for screen readers unless `aria-label` is also explicitly provided.
+**Action:** Always add an `aria-label` attribute (usually mirroring the `title`) to icon-only buttons created with React DOM factories in the DevTools codebase to ensure full screen reader accessibility. When both are used and localized with the same string, extract the translation call to a variable to keep the code DRY.
