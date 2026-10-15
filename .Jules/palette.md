@@ -1,0 +1,3 @@
+## 2024-05-24 - Missing ARIA labels in icon-only buttons in Firefox DevTools
+**Learning:** Found that Firefox DevTools sometimes creates icon-only buttons (using `dom.button`) in its React components that only have a `title` attribute for tooltips, but are missing the explicit `aria-label` attribute needed for proper screen reader accessibility.
+**Action:** When adding or maintaining icon-only buttons in the DevTools React DOM wrappers, ensure `aria-label` is always explicitly declared alongside `title`. Often, extracting the localized string into a variable and reusing it for both `title` and `aria-label` keeps the code clean.
