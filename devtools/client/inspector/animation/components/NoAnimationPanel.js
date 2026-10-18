@@ -39,6 +39,7 @@ class NoAnimationPanel extends Component {
       },
       dom.p(null, L10N.getStr("panel.noAnimation")),
       dom.button({
+        "aria-label": L10N.getStr("panel.elementPickerTooltip"),
         className:
           "animation-element-picker devtools-button devtools-button-standalone" +
           (elementPickerEnabled ? " checked" : ""),
@@ -46,6 +47,7 @@ class NoAnimationPanel extends Component {
           event.stopPropagation();
           toggleElementPicker();
         },
+        title: L10N.getStr("panel.elementPickerTooltip"),
       })
     );
   }
