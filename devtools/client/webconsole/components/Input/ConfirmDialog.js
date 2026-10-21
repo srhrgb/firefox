@@ -157,6 +157,7 @@ class ConfirmDialog extends Component {
             className: "devtools-button close-confirm-dialog-button",
             key: "close-button",
             title: closeButtonTooltip,
+            "aria-label": closeButtonTooltip,
             onClick: this.cancel,
           })
         ),
