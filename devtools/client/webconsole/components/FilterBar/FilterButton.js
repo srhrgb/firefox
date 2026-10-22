@@ -26,6 +26,7 @@ function FilterButton(props) {
       className: "devtools-togglebutton",
       "data-category": filterKey,
       title,
+      "aria-label": title,
       onClick: () => {
         dispatch(actions.filterToggle(filterKey));
       },

@@ -177,12 +177,16 @@ class ConsoleSettings extends Component {
     const doc = webConsoleUI.document;
     const { toolbox } = webConsoleUI.wrapper;
 
+    const title = l10n.getStr(
+      "webconsole.console.settings.menu.button.tooltip"
+    );
     return MenuButton(
       {
         menuId: "webconsole-console-settings-menu-button",
         toolboxDoc: toolbox ? toolbox.doc : doc,
         className: "devtools-button webconsole-console-settings-menu-button",
-        title: l10n.getStr("webconsole.console.settings.menu.button.tooltip"),
+        title,
+        "aria-label": title,
       },
       // We pass the children in a function so we don't require the MenuItem and MenuList
       // components until we need to display them (i.e. when the button is clicked).
