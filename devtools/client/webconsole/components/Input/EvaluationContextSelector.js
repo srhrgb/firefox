@@ -314,6 +314,7 @@ class EvaluationContextSelector extends Component {
     const doc = webConsoleUI.document;
     const { toolbox } = webConsoleUI.wrapper;
 
+    const title = l10n.getStr("webconsole.input.selector.tooltip");
     return MenuButton(
       {
         menuId: "webconsole-input-evaluationsButton",
@@ -322,7 +323,8 @@ class EvaluationContextSelector extends Component {
         className:
           "webconsole-evaluation-selector-button devtools-button devtools-dropdown-button" +
           (selectedTarget && !selectedTarget.isTopLevel ? " checked" : ""),
-        title: l10n.getStr("webconsole.input.selector.tooltip"),
+        title,
+        "aria-label": title,
       },
       // We pass the children in a function so we don't require the MenuItem and MenuList
       // components until we need to display them (i.e. when the button is clicked).
