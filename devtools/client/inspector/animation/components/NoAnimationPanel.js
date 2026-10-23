@@ -33,6 +33,8 @@ class NoAnimationPanel extends Component {
   render() {
     const { elementPickerEnabled, toggleElementPicker } = this.props;
 
+    const tooltip = L10N.getStr("panel.elementPickerTooltip");
+
     return dom.div(
       {
         className: "animation-error-message devtools-sidepanel-no-result",
@@ -46,6 +48,8 @@ class NoAnimationPanel extends Component {
           event.stopPropagation();
           toggleElementPicker();
         },
+        title: tooltip,
+        "aria-label": tooltip,
       })
     );
   }
