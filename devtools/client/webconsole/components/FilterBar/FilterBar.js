@@ -205,16 +205,22 @@ class FilterBar extends Component {
   }
 
   renderClearButton() {
-    return dom.button({
-      className: "devtools-button devtools-clear-icon",
-      title: l10n.getFormatStr("webconsole.clearButton.tooltipWithHotkeyHint", [
+    const title = l10n.getFormatStr(
+      "webconsole.clearButton.tooltipWithHotkeyHint",
+      [
         this.props.webConsoleUI
           .getClearKeyShortcuts()
           .map(electronKey =>
             KeyShortcuts.stringifyFromElectronKey(electronKey)
           )
           .join(", "),
-      ]),
+      ]
+    );
+
+    return dom.button({
+      className: "devtools-button devtools-clear-icon",
+      title,
+      "aria-label": title,
       onClick: () => this.props.dispatch(actions.messagesClear()),
     });
   }
@@ -369,6 +375,7 @@ class FilterBar extends Component {
         key: "split-console-close-button",
         className: "devtools-button",
         title: l10n.getStr("webconsole.closeSplitConsoleButton.tooltip"),
+        "aria-label": l10n.getStr("webconsole.closeSplitConsoleButton.tooltip"),
         onClick: () => {
           closeSplitConsole();
         },
