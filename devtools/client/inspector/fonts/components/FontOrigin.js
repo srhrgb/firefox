@@ -56,6 +56,8 @@ class FontOrigin extends PureComponent {
       );
     }
 
+    const copyTitle = getStr("fontinspector.copyURL");
+
     return dom.p(
       {
         className: "font-origin remote",
@@ -70,7 +72,8 @@ class FontOrigin extends PureComponent {
       dom.button({
         className: "copy-icon",
         onClick: this.onCopyURL,
-        title: getStr("fontinspector.copyURL"),
+        "aria-label": copyTitle,
+        title: copyTitle,
       })
     );
   }
