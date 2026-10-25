@@ -17,6 +17,9 @@ const {
   MIN_VIEWPORT_DIMENSION,
 } = require("resource://devtools/client/responsive/constants.js");
 const Types = require("resource://devtools/client/responsive/types.js");
+const {
+  getStr,
+} = require("resource://devtools/client/responsive/utils/l10n.js");
 
 loader.lazyRequireGetter(
   this,
@@ -211,6 +214,7 @@ class ViewportDimension extends PureComponent {
             : ""),
       },
       dom.input({
+        "aria-label": getStr("responsive.viewportWidth"),
         ref: input => {
           this.widthInput = input;
         },
@@ -233,6 +237,7 @@ class ViewportDimension extends PureComponent {
         "×"
       ),
       dom.input({
+        "aria-label": getStr("responsive.viewportHeight"),
         ref: input => {
           this.heightInput = input;
         },
