@@ -1,0 +1,3 @@
+## 2024-05-18 - Tooltip ARIA Labels in Network Monitor
+**Learning:** Icon-only buttons in the Firefox Network Monitor toolbar rely on standard `title` attributes for visual tooltips, but lack explicit `aria-label` attributes for accessibility. Even though a `title` can provide an accessible name for some screen readers, it is generally considered a fallback with inconsistent support. Explicit `aria-label`s ensure consistent accessible names for all assistive technologies.
+**Action:** Always add an `aria-label` when adding or modifying an icon-only button, even if a `title` attribute is present. The `aria-label` value can simply mirror the `title` string if it provides sufficient context.
