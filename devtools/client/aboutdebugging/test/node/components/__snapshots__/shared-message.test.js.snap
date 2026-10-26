@@ -69,23 +69,24 @@ exports[`Message component renders with closing button renders the expected snap
       Message content
     </div>
   </div>
-  <button
-    className="ghost-button message__button message__button--info qa-message-button-close-button"
-    onClick={[Function]}
-  >
-    <Localized
-      attrs={
-        Object {
-          "alt": true,
-        }
+  <Localized
+    attrs={
+      Object {
+        "aria-label": true,
+        "title": true,
       }
-      id="about-debugging-message-close-icon"
+    }
+    id="about-debugging-message-close-icon"
+  >
+    <button
+      className="ghost-button message__button message__button--info qa-message-button-close-button"
+      onClick={[Function]}
     >
       <img
         className="qa-message-button-close-icon"
         src="chrome://devtools/skin/images/close.svg"
       />
-    </Localized>
-  </button>
+    </button>
+  </Localized>
 </aside>
 `;

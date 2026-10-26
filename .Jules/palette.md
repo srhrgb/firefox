@@ -1,0 +1,3 @@
+## 2025-02-18 - Localizing nested React attributes in FluentReact
+**Learning:** When using `FluentReact.Localized` in Firefox DevTools, applying `title` and `aria-label` attributes to a `dom.button` requires wrapping the *button* element directly rather than an inner element (like an image or icon).
+**Action:** Always verify which element requires the attributes, wrap that specific element with `Localized`, set the boolean flags for the attributes in `attrs: { "aria-label": true, "title": true }`, and update the `.ftl` translations file to provide the translations for those corresponding dot-notation properties (`.title`, `.aria-label`).
