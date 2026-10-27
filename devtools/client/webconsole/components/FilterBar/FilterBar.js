@@ -369,6 +369,7 @@ class FilterBar extends Component {
         key: "split-console-close-button",
         className: "devtools-button",
         title: l10n.getStr("webconsole.closeSplitConsoleButton.tooltip"),
+        "aria-label": l10n.getStr("webconsole.closeSplitConsoleButton.tooltip"),
         onClick: () => {
           closeSplitConsole();
         },
