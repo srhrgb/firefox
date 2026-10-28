@@ -1,0 +1,3 @@
+## 2024-05-15 - ARIA Labels for Icon-Only Buttons
+**Learning:** Icon-only buttons using `dom.button` in Firefox DevTools often rely solely on the `title` attribute for tooltips and accessibility. This is a common pattern in the animation inspector, where buttons like pause/resume and rewind use only `title`. Without `aria-label` screen reader users might not get the intended description if `title` handling differs or if it's missing.
+**Action:** Always add an `aria-label` to icon-only buttons using `dom.button`, typically setting it to the same localized string used for the `title` attribute to ensure proper accessibility.
