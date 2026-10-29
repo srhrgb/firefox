@@ -1,0 +1,3 @@
+## 2024-05-18 - Tooltips on DevTools Buttons
+**Learning:** In Firefox DevTools React components, icon-only buttons built with `dom.button` lack visible labels. The absence of `title` (for tooltips) and `aria-label` (for screen readers) makes these settings menus inaccessible and unintuitive. The string `getStr()` helper is the standard way to retrieve localized strings for these attributes.
+**Action:** Always check `dom.button` instances for missing tooltips and ARIA labels. For simple buttons, assign the same localized string to both `title` and `aria-label` to ensure visual and assistive technology accessibility.
