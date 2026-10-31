@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility for icon-only buttons
+**Learning:** Icon-only buttons created via React DOM factories (like `dom.button()`) need both a `title` and an `aria-label` to be fully accessible. Using just a `title` provides a visual tooltip on hover, but an explicit `aria-label` ensures that screen readers properly announce the button's purpose without having to rely on the tooltip text.
+**Action:** When creating or updating icon-only buttons, always ensure that both `title` and `aria-label` attributes are present. If using a localized string, use the same string for both attributes to maintain consistency.
