@@ -1,0 +1,3 @@
+## 2026-11-01 - Adding aria-labels to Web Console Toolbar
+**Learning:** Icon-only buttons in the Firefox DevTools React codebase often rely solely on the `title` attribute for tooltips. When adding `aria-label`s to match these `title`s in components where strings are generated via `l10n.getStr()` or `l10n.getFormatStr()`, it's cleaner to extract these localization calls into variables at the top of the `render()` method to keep the JSX DRY, rather than duplicating the calls inline for both properties.
+**Action:** Always check `dom.button` declarations in DevTools UI files for missing `aria-label`s when a `title` is present, and extract the localization logic to avoid repetition when fixing them.
