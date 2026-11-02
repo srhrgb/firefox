@@ -1,0 +1,3 @@
+## 2024-11-02 - Add missing ARIA labels to Responsive Design Mode toolbar buttons
+**Learning:** Icon-only buttons in the Firefox DevTools Responsive Design Mode toolbar were missing `aria-label` attributes, relying solely on `title` attributes for tooltips which is insufficient for full accessibility. Adding identical `aria-label` strings alongside `title` ensures screen reader users understand the button's purpose while maintaining visual tooltips.
+**Action:** Always ensure that UI components rendered via React DOM factories (like `dom.button`) in this codebase explicitly receive both `title` and `aria-label` properties when they lack visible text content.
