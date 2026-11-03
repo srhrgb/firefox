@@ -1,0 +1,3 @@
+## $(date +%Y-%m-%d) - Accessibility for icon-only React components in Mozilla DevTools
+**Learning:** In Firefox DevTools codebase, some icon-only buttons built via `react-dom-factories` lack proper tooltips and ARIA labels. Adding them drastically improves screen reader support and general usability. When modifying `.properties` files, localization variables must be added securely without overriding existing localized lines.
+**Action:** Always check React components created using `dom.button({})` that only have icons/classes for proper `title` and `aria-label` attributes. Wrap new localizations in the matching component context.

@@ -32,6 +32,7 @@ class NoAnimationPanel extends Component {
 
   render() {
     const { elementPickerEnabled, toggleElementPicker } = this.props;
+    const pickerTooltip = L10N.getStr("panel.pickerTooltip");
 
     return dom.div(
       {
@@ -46,6 +47,8 @@ class NoAnimationPanel extends Component {
           event.stopPropagation();
           toggleElementPicker();
         },
+        title: pickerTooltip,
+        "aria-label": pickerTooltip,
       })
     );
   }
