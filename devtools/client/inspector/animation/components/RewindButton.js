@@ -31,6 +31,7 @@ class RewindButton extends PureComponent {
         rewindAnimationsCurrentTime();
       },
       title: getStr("timeline.rewindButtonTooltip"),
+      "aria-label": getStr("timeline.rewindButtonTooltip"),
     });
   }
 }
