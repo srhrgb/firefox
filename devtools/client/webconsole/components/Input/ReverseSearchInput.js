@@ -198,6 +198,10 @@ class ReverseSearchInput extends Component {
     return [
       dom.button({
         key: "search-result-button-prev",
+        "aria-label": l10n.getFormatStr(
+          "webconsole.reverseSearch.result.previousButton.tooltip",
+          [isMacOS ? "Ctrl + R" : "F9"]
+        ),
         className: "devtools-button search-result-button-prev",
         title: l10n.getFormatStr(
           "webconsole.reverseSearch.result.previousButton.tooltip",
@@ -210,6 +214,10 @@ class ReverseSearchInput extends Component {
       }),
       dom.button({
         key: "search-result-button-next",
+        "aria-label": l10n.getFormatStr(
+          "webconsole.reverseSearch.result.nextButton.tooltip",
+          [isMacOS ? "Ctrl + S" : "Shift + F9"]
+        ),
         className: "devtools-button search-result-button-next",
         title: l10n.getFormatStr(
           "webconsole.reverseSearch.result.nextButton.tooltip",
@@ -256,6 +264,10 @@ class ReverseSearchInput extends Component {
         this.renderSearchInformation(),
         this.renderNavigationButtons(),
         dom.button({
+          "aria-label": l10n.getFormatStr(
+            "webconsole.reverseSearch.closeButton.tooltip",
+            ["Esc" + (isMacOS ? " | Ctrl + C" : "")]
+          ),
           className: "devtools-button reverse-search-close-button",
           title: l10n.getFormatStr(
             "webconsole.reverseSearch.closeButton.tooltip",
