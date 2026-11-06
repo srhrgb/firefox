@@ -1,0 +1,3 @@
+## 2024-05-23 - Added ARIA tooltips to DevTools icon buttons
+**Learning:** In Firefox DevTools React components created via DOM factories (e.g., `dom.button`), providing an empty title attribute or lacking an aria-label makes icon-only buttons entirely invisible to screen readers and difficult to understand visually. Providing a `title` attribute dynamically localized from properties files is an important accessibility feature for these small interactive components.
+**Action:** When working on Firefox DevTools React components that use icon-only buttons (like those with class `devtools-button`), always ensure they have a `title` (or `aria-label`) attribute hooked up to the localization files using `getStr` to support hover tooltips and basic accessibility.
