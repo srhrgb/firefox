@@ -1,0 +1,3 @@
+## 2026-11-07 - Add ARIA label to performance button in Netmonitor StatusBar
+**Learning:** In Firefox DevTools React components using `FluentReact.Localized`, localization attributes (like `title` or `aria-label` defined in `attrs`) are applied to the component's direct child element. If an icon-only button only defines `attrs: { title: true }`, it will lack full screen reader accessibility. Both `title` and `aria-label` must be explicitly enabled and mapped in the `.ftl` file for it to be accessible.
+**Action:** Always enable `aria-label: true` in the `attrs` of `FluentReact.Localized` and add the corresponding `.aria-label` entry in the `.ftl` files for all icon-only buttons relying on tooltips.

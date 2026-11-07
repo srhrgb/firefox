@@ -74,7 +74,7 @@ class StatusBar extends Component {
         ? Localized(
             {
               id: "network-menu-summary-tooltip-perf",
-              attrs: { title: true },
+              attrs: { title: true, "aria-label": true },
             },
             button({
               className: "devtools-button requests-list-network-summary-button",

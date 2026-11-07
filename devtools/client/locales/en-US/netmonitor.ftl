@@ -7,6 +7,7 @@
 # Tooltip for the performance button in the status bar
 network-menu-summary-tooltip-perf =
     .title = Start performance analysis
+    .aria-label = Start performance analysis
 network-menu-summary-tooltip-domcontentloaded =
     .title = Time when “DOMContentLoaded” event occurred
 network-menu-summary-tooltip-load =
