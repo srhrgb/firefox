@@ -1,0 +1,3 @@
+## 2024-05-18 - Accessible Icon-only Buttons in React DOM factories
+**Learning:** In Firefox DevTools, legacy icon-only buttons constructed using React DOM factories (like `dom.button`) often rely purely on CSS for the icon and a `title` attribute for tooltip text. However, a `title` attribute alone is insufficient for robust screen reader accessibility. An `aria-label` matching the `title` intent must be explicitly provided.
+**Action:** When auditing or implementing icon-only buttons using `dom.button`, always extract the localization string (e.g., via `getStr`) and apply it to both the `title` and `aria-label` attributes to ensure parity between visual tooltips and screen reader announcements.
