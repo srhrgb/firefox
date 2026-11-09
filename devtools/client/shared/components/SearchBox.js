@@ -227,6 +227,7 @@ class SearchBox extends PureComponent {
     const showAutocomplete =
       autocompleteProvider && this.state.focused && value !== "";
     const showLearnMoreLink = learnMoreUrl && value === "";
+    const clearButtonTitle = l10n.getStr("searchBox.clearButtonTitle");
 
     return dom.div(
       { className: "devtools-searchbox" },
@@ -261,7 +262,8 @@ class SearchBox extends PureComponent {
         className: "devtools-searchinput-clear",
         hidden: value === "",
         onClick: this.onClearButtonClick,
-        title: l10n.getStr("searchBox.clearButtonTitle"),
+        title: clearButtonTitle,
+        "aria-label": clearButtonTitle,
       }),
       showAutocomplete &&
         SearchBoxAutocompletePopup({
