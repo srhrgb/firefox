@@ -71,6 +71,7 @@ class ArrowExpander extends Component {
     return dom.button({
       className: classNames.join(" "),
       title,
+      "aria-label": title,
     });
   }
 }
