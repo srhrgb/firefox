@@ -142,6 +142,7 @@ sidebar-item-session-history = Session History
 # Entry in the Session History diagram
 session-history-entry-info-button-title =
   .title = Show session history data
+  .aria-label = Show session history data
 
 # Text for the ALT and TITLE attributes of the warning icon
 icon-warning =

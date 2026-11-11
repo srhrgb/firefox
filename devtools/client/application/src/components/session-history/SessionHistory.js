@@ -99,7 +99,7 @@ function SessionHistoryDiagram({ current, diagrams, entriesByKey }) {
                   Localized(
                     {
                       id: "session-history-entry-info-button-title",
-                      attrs: { title: true },
+                      attrs: { title: true, "aria-label": true },
                     },
                     button(
                       { popovertarget: id },
