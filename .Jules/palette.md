@@ -1,0 +1,3 @@
+## 2024-11-11 - Localized Icon-Only Buttons
+**Learning:** In Firefox DevTools, many icon-only buttons are created using `Localized` wrappers that apply only the `title` attribute for tooltips (e.g., `attrs: { title: true }`), meaning they lack proper `aria-label` screen reader support for true accessibility.
+**Action:** When creating or fixing icon-only buttons wrapped in `Localized` in Firefox DevTools, I will add `aria-label: true` alongside `title: true` in the `attrs` object, and verify the `.ftl` localization file includes both `.title = ...` and `.aria-label = ...` (or ensure they share the same base translation value if appropriate).
